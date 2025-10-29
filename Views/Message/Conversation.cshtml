@@ -1,0 +1,175 @@
+﻿@model List<BCSApp.Models.Message>
+@{
+    ViewData["Title"] = "Conversation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var partner = ViewBag.Partner as BCSApp.Models.ApplicationUser;
+    var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+}
+
+<div class="min-h-screen bg-gray-50 py-6">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-6 bg-white shadow rounded-lg p-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="/Message/Conversations" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </a>
+
+                    <!-- Partner Avatar -->
+                    <div class="w-12 h-12 bg-gradient-to-r from-brand-navy to-brand-blue rounded-full flex items-center justify-center">
+                        <span class="text-white font-medium">
+                            @partner.FirstName.Substring(0, 1)@partner.LastName.Substring(0, 1)
+                        </span>
+                    </div>
+
+                    <!-- Partner Info -->
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">
+                            @partner.FirstName @partner.LastName
+                        </h1>
+                        <p class="text-sm text-gray-600">
+                            @partner.Role
+                            @if (partner.Company != null)
+                            {
+                                <span class="mx-2">•</span>
+                                @partner.Company
+                            }
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="/Message/Compose?recipientId=@partner.Id" class="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-pen mr-2"></i>
+                        New Message
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messages Thread -->
+        <div class="bg-white shadow rounded-lg mb-6" style="max-height: 60vh; overflow-y: auto;">
+            <div class="p-6 space-y-6">
+                @if (Model.Any())
+                {
+                    @foreach (var message in Model)
+                    {
+                        var isCurrentUser = message.SenderId == currentUserId;
+
+                        <div class="flex @(isCurrentUser ? "justify-end" : "justify-start")">
+                            <div class="@(isCurrentUser ? "order-2" : "order-1") flex flex-col max-w-xl">
+                                <!-- Message Bubble -->
+                                <div class="@(isCurrentUser ? "bg-brand-blue text-white" : "bg-gray-100 text-gray-900") rounded-lg px-4 py-3 shadow">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs @(isCurrentUser ? "text-blue-100" : "text-gray-500") font-medium">
+                                            @message.Sender.FirstName @message.Sender.LastName
+                                        </span>
+                                        <span class="text-xs @(isCurrentUser ? "text-blue-100" : "text-gray-500") ml-3">
+                                            @message.CreatedAt.ToString("MMM dd, HH:mm")
+                                        </span>
+                                    </div>
+
+                                    @if (!string.IsNullOrEmpty(message.Subject) && message.Subject != "Quick Message")
+                                    {
+                                        <p class="text-sm font-semibold mb-1">@message.Subject</p>
+                                    }
+
+                                    <p class="text-sm whitespace-pre-wrap">@message.Content</p>
+
+                                    <!-- Tags -->
+                                    @if (message.ProjectId != null || message.MaintenanceRequestId != null || message.TaskId != null)
+                                    {
+                                        <div class="flex items-center space-x-2 mt-2">
+                                            @if (message.ProjectId != null)
+                                            {
+                                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium @(isCurrentUser ? "bg-blue-700 text-blue-100" : "bg-purple-100 text-purple-800")">
+                                                    <i class="fas fa-project-diagram mr-1"></i>Project
+                                                </span>
+                                            }
+                                            @if (message.MaintenanceRequestId != null)
+                                            {
+                                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium @(isCurrentUser ? "bg-blue-700 text-blue-100" : "bg-yellow-100 text-yellow-800")">
+                                                    <i class="fas fa-tools mr-1"></i>Maintenance
+                                                </span>
+                                            }
+                                            @if (message.TaskId != null)
+                                            {
+                                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium @(isCurrentUser ? "bg-blue-700 text-blue-100" : "bg-green-100 text-green-800")">
+                                                    <i class="fas fa-tasks mr-1"></i>Task
+                                                </span>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+
+                                <!-- Read Status -->
+                                @if (isCurrentUser)
+                                {
+                                    <div class="text-xs text-gray-500 mt-1 text-right">
+                                        @if (message.IsRead)
+                                        {
+                                            <i class="fas fa-check-double text-blue-500"></i>
+                                            <span>Read @message.ReadAt?.ToString("MMM dd, HH:mm")</span>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-check text-gray-400"></i>
+                                            <span>Sent</span>
+                                        }
+                                    </div>
+                                }
+                            </div>
+
+                            <!-- Avatar -->
+                            <div class="@(isCurrentUser ? "order-1 mr-3" : "order-2 ml-3") flex-shrink-0">
+                                <div class="w-8 h-8 @(isCurrentUser ? "bg-gradient-to-r from-brand-orange to-brand-purple" : "bg-gradient-to-r from-brand-navy to-brand-blue") rounded-full flex items-center justify-center">
+                                    <span class="text-white text-xs font-medium">
+                                        @message.Sender.FirstName.Substring(0, 1)@message.Sender.LastName.Substring(0, 1)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="text-center py-12">
+                        <div class="mx-auto w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-comments text-gray-400 text-xl"></i>
+                        </div>
+                        <p class="text-gray-500">No messages yet. Start the conversation!</p>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Quick Reply Form -->
+        <div class="bg-white shadow rounded-lg">
+            <form asp-action="SendQuick" method="post" class="p-6">
+                <input type="hidden" name="recipientId" value="@partner.Id" />
+                <div class="flex space-x-4">
+                    <div class="flex-1">
+                        <textarea name="content" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent resize-none" placeholder="Type your message..." required></textarea>
+                    </div>
+                    <div class="flex items-end">
+                        <button type="submit" class="px-6 py-2 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors h-fit">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Auto-scroll to bottom of messages
+    window.addEventListener('load', function() {
+        const messagesContainer = document.querySelector('[style*="overflow-y: auto"]');
+        if (messagesContainer) {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    });
+</script>

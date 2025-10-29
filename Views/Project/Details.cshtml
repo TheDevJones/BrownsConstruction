@@ -1,0 +1,241 @@
+@model BCSApp.Models.Project
+@{
+    ViewData["Title"] = "Project Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="min-h-screen bg-gray-50 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">@Model.Name</h1>
+                    <p class="mt-2 text-gray-600">@Model.Location</p>
+                </div>
+                <div class="flex space-x-3">
+                    <a href="/Project" class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Projects
+                    </a>
+                    <a href="/Project/Edit/@Model.Id" class="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-edit mr-2"></i>
+                        Edit Project
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Project Information -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Project Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Project Name</label>
+                            <p class="text-gray-900">@Model.Name</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Location</label>
+                            <p class="text-gray-900">@Model.Location</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Start Date</label>
+                            <p class="text-gray-900">@Model.StartDate.ToString("MMM dd, yyyy")</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">End Date</label>
+                            <p class="text-gray-900">@Model.EndDate.ToString("MMM dd, yyyy")</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Budget</label>
+                            <p class="text-gray-900">R @Model.Budget.ToString("N2")</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Actual Cost</label>
+                            <p class="text-gray-900">R @Model.ActualCost.ToString("N2")</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label class="text-sm font-medium text-gray-500">Description</label>
+                        <p class="text-gray-900 mt-1">@Model.Description</p>
+                    </div>
+                </div>
+
+                <!-- Project Phases -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Project Phases</h3>
+                        <a href="/ProjectPhase/Create?projectId=@Model.Id" class="inline-flex items-center px-3 py-1 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors text-sm">
+                            <i class="fas fa-plus mr-1"></i>
+                            Add Phase
+                        </a>
+                    </div>
+                    @if (Model.Phases != null && Model.Phases.Any())
+                    {
+                        <div class="space-y-3">
+                            @foreach (var phase in Model.Phases.OrderBy(p => p.StartDate))
+                            {
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">@phase.Name</h4>
+                                            <p class="text-sm text-gray-600 mt-1">@phase.Description</p>
+                                            <div class="flex items-center space-x-4 mt-2 text-sm text-gray-500">
+                                                <span><i class="fas fa-calendar mr-1"></i>@phase.StartDate.ToString("MMM dd") - @phase.EndDate.ToString("MMM dd, yyyy")</span>
+                                                <span><i class="fas fa-dollar-sign mr-1"></i>R @phase.Budget.ToString("N2")</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            @{
+                                                var statusClass = phase.Status switch
+                                                {
+                                                    "Active" => "bg-green-100 text-green-800",
+                                                    "On Hold" => "bg-yellow-100 text-yellow-800",
+                                                    "Completed" => "bg-blue-100 text-blue-800",
+                                                    "Cancelled" => "bg-red-100 text-red-800",
+                                                    _ => "bg-gray-100 text-gray-800"
+                                                };
+                                            }
+                                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full @statusClass">
+                                                @phase.Status
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-8 text-gray-500">
+                            <i class="fas fa-tasks text-4xl mb-4"></i>
+                            <p>No phases added yet</p>
+                        </div>
+                    }
+                </div>
+
+                <!-- Tasks -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Recent Tasks</h3>
+                        <a href="/Task/Create?projectId=@Model.Id" class="inline-flex items-center px-3 py-1 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors text-sm">
+                            <i class="fas fa-plus mr-1"></i>
+                            Add Task
+                        </a>
+                    </div>
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-clipboard-list text-4xl mb-4"></i>
+                        <p>No tasks available</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Status Card -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Project Status</h3>
+                    @{
+                        var projectStatusClass = Model.Status switch
+                        {
+                            "Active" => "bg-green-100 text-green-800",
+                            "On Hold" => "bg-yellow-100 text-yellow-800",
+                            "Completed" => "bg-blue-100 text-blue-800",
+                            "Cancelled" => "bg-red-100 text-red-800",
+                            _ => "bg-gray-100 text-gray-800"
+                        };
+                    }
+                    <span class="inline-flex px-3 py-1 text-sm font-semibold rounded-full @projectStatusClass">
+                        @Model.Status
+                    </span>
+                </div>
+
+                <!-- Team Members -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Team Members</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">
+                                    @if (Model.ProjectManager != null)
+                                    {
+                                        @(Model.ProjectManager.FirstName + " " + Model.ProjectManager.LastName)
+                                    }
+                                    else
+                                    {
+                                        <span class="text-gray-500 italic">Not Assigned</span>
+                                    }
+                                </p>
+                                <p class="text-xs text-gray-500">Project Manager</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">
+                                    @if (Model.Client != null)
+                                    {
+                                        @(Model.Client.FirstName + " " + Model.Client.LastName)
+                                    }
+                                    else
+                                    {
+                                        <span class="text-gray-500 italic">Not Assigned</span>
+                                    }
+                                </p>
+                                <p class="text-xs text-gray-500">Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Overview -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Budget Overview</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Budget</span>
+                            <span class="text-sm font-medium">R @Model.Budget.ToString("N2")</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Spent</span>
+                            <span class="text-sm font-medium">R @Model.ActualCost.ToString("N2")</span>
+                        </div>
+                        <div class="border-t pt-2">
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Remaining</span>
+                                <span class="text-sm font-medium">R @((Model.Budget - Model.ActualCost).ToString("N2"))</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Quick Actions</h3>
+                    <div class="space-y-2">
+                        <a href="/Maintenance/Create?projectId=@Model.Id" class="block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                            <i class="fas fa-tools mr-2"></i>
+                            Log Maintenance Request
+                        </a>
+                        <a href="/Document/Upload?projectId=@Model.Id" class="block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                            <i class="fas fa-upload mr-2"></i>
+                            Upload Document
+                        </a>
+                        <a href="/Task/Create?projectId=@Model.Id" class="block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                            <i class="fas fa-plus mr-2"></i>
+                            Create Task
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

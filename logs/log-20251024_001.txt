@@ -1,0 +1,453 @@
+2025-10-24 00:17:26.512 +02:00 [INF] User profile is available. Using 'C:\Users\Mr Emmanuel\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-24 00:17:27.850 +02:00 [WRN] The foreign key property 'DocumentAccess.DocumentId1' was created in shadow state because a conflicting property with the simple name 'DocumentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-24 00:17:27.851 +02:00 [WRN] The foreign key property 'Invoice.QuotationId1' was created in shadow state because a conflicting property with the simple name 'QuotationId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-24 00:17:28.540 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-24 00:17:28.561 +02:00 [INF] Database already contains users, skipping seeding
+2025-10-24 00:17:28.730 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/ - null null
+2025-10-24 00:17:28.808 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-24 00:17:28.809 +02:00 [INF] Hosting environment: Development
+2025-10-24 00:17:28.809 +02:00 [INF] Content root path: D:\downloads\Brown-s-Construction-Services-main\Brown-s-Construction-Services-main\BCSApp
+2025-10-24 00:17:28.926 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-10-24 00:17:28.939 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2025-10-24 00:17:28.950 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Account/Login?ReturnUrl=%2F - null null
+2025-10-24 00:17:28.970 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/ - 302 null null 243.4348ms
+2025-10-24 00:17:28.983 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.AccountController.Login (BCSApp)'
+2025-10-24 00:17:29.007 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller BCSApp.Controllers.AccountController (BCSApp).
+2025-10-24 00:17:29.031 +02:00 [INF] Executing ViewResult, running view Login.
+2025-10-24 00:17:29.130 +02:00 [INF] Executed ViewResult - view Login executed in 100.3742ms.
+2025-10-24 00:17:29.131 +02:00 [INF] Executed action BCSApp.Controllers.AccountController.Login (BCSApp) in 123.5395ms
+2025-10-24 00:17:29.132 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.AccountController.Login (BCSApp)'
+2025-10-24 00:17:29.140 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Account/Login?ReturnUrl=%2F - 200 null text/html; charset=utf-8 189.5506ms
+2025-10-24 00:17:29.150 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:17:29.156 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 4.4473ms
+2025-10-24 00:17:29.157 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_vs/browserLink - null null
+2025-10-24 00:17:29.213 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.3474ms
+2025-10-24 00:17:43.265 +02:00 [INF] Request starting HTTP/2 POST https://localhost:44340/Account/Login - application/x-www-form-urlencoded 247
+2025-10-24 00:17:43.273 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.AccountController.Login (BCSApp)'
+2025-10-24 00:17:43.279 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BCSApp.Models.LoginViewModel, System.String) on controller BCSApp.Controllers.AccountController (BCSApp).
+2025-10-24 00:17:43.452 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-24 00:17:43.707 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-10-24 00:17:43.740 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-10-24 00:17:43.755 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-24 00:17:43.777 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-24 00:17:43.782 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-10-24 00:17:43.787 +02:00 [INF] Executing RedirectResult, redirecting to /Home/Dashboard.
+2025-10-24 00:17:43.788 +02:00 [INF] Executed action BCSApp.Controllers.AccountController.Login (BCSApp) in 508.5044ms
+2025-10-24 00:17:43.788 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.AccountController.Login (BCSApp)'
+2025-10-24 00:17:43.792 +02:00 [INF] Request finished HTTP/2 POST https://localhost:44340/Account/Login - 302 null null 527.6096ms
+2025-10-24 00:17:43.793 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Home/Dashboard - null null
+2025-10-24 00:17:43.799 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-24 00:17:43.802 +02:00 [INF] Route matched with {action = "Dashboard", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard() on controller BCSApp.Controllers.HomeController (BCSApp).
+2025-10-24 00:17:43.880 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-24 00:17:43.900 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+2025-10-24 00:17:43.913 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[Status] = N'In Progress'
+2025-10-24 00:17:43.919 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+2025-10-24 00:17:43.925 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+WHERE [m].[Status] = N'Pending'
+2025-10-24 00:17:43.931 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+2025-10-24 00:17:43.944 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[DueDate] < GETDATE() AND [t].[Status] <> N'Completed'
+2025-10-24 00:17:43.999 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[ClientId], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Location], [p0].[Name], [p0].[ProjectManagerId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+    FROM [Projects] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+LEFT JOIN [AspNetUsers] AS [a] ON [p0].[ProjectManagerId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [p0].[ClientId] = [a0].[Id]
+ORDER BY [p0].[CreatedAt] DESC
+2025-10-24 00:17:44.084 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m0].[Id], [m0].[ActualCost], [m0].[AssignedToId], [m0].[ClientId], [m0].[CompletedAt], [m0].[CreatedAt], [m0].[Description], [m0].[DueDate], [m0].[EstimatedCost], [m0].[Location], [m0].[Priority], [m0].[ProjectId], [m0].[PropertyType], [m0].[Status], [m0].[Title], [m0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt]
+    FROM [MaintenanceRequests] AS [m]
+    ORDER BY [m].[CreatedAt] DESC
+) AS [m0]
+INNER JOIN [AspNetUsers] AS [a] ON [m0].[ClientId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [m0].[AssignedToId] = [a0].[Id]
+ORDER BY [m0].[CreatedAt] DESC
+2025-10-24 00:17:44.151 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[ActualCost], [t0].[AssignedToId], [t0].[CompletedAt], [t0].[CreatedAt], [t0].[CreatedById], [t0].[Description], [t0].[DueDate], [t0].[EstimatedCost], [t0].[MaintenanceRequestId], [t0].[Priority], [t0].[ProjectPhaseId], [t0].[Status], [t0].[Title], [t0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [t].[Id], [t].[ActualCost], [t].[AssignedToId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedById], [t].[Description], [t].[DueDate], [t].[EstimatedCost], [t].[MaintenanceRequestId], [t].[Priority], [t].[ProjectPhaseId], [t].[Status], [t].[Title], [t].[UpdatedAt]
+    FROM [Tasks] AS [t]
+    ORDER BY [t].[CreatedAt] DESC
+) AS [t0]
+INNER JOIN [AspNetUsers] AS [a] ON [t0].[AssignedToId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [t0].[CreatedById] = [a0].[Id]
+ORDER BY [t0].[CreatedAt] DESC
+2025-10-24 00:17:44.207 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Status], COUNT(*) AS [Count]
+FROM [Projects] AS [p]
+GROUP BY [p].[Status]
+2025-10-24 00:17:44.216 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Priority], COUNT(*) AS [Count]
+FROM [MaintenanceRequests] AS [m]
+GROUP BY [m].[Priority]
+2025-10-24 00:17:44.225 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Status], COUNT(*) AS [Count]
+FROM [Tasks] AS [t]
+GROUP BY [t].[Status]
+2025-10-24 00:17:44.233 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+FROM [Projects] AS [p]
+2025-10-24 00:17:44.238 +02:00 [INF] Executing ViewResult, running view Dashboard.
+2025-10-24 00:17:44.306 +02:00 [INF] Executed ViewResult - view Dashboard executed in 71.2464ms.
+2025-10-24 00:17:44.307 +02:00 [INF] Executed action BCSApp.Controllers.HomeController.Dashboard (BCSApp) in 504.885ms
+2025-10-24 00:17:44.307 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-24 00:17:44.308 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Home/Dashboard - 200 null text/html; charset=utf-8 514.9129ms
+2025-10-24 00:17:44.316 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:17:44.316 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_vs/browserLink - null null
+2025-10-24 00:17:44.319 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.1576ms
+2025-10-24 00:17:44.338 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.6689ms
+2025-10-24 00:17:52.944 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Project - null null
+2025-10-24 00:17:52.950 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-24 00:17:52.955 +02:00 [INF] Route matched with {action = "Index", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-24 00:17:52.963 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-24 00:17:53.009 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Name], [p0].[Order], [p0].[ProjectId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt]
+FROM [Projects] AS [p]
+LEFT JOIN [AspNetUsers] AS [a] ON [p].[ProjectManagerId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [p].[ClientId] = [a0].[Id]
+LEFT JOIN [ProjectPhases] AS [p0] ON [p].[Id] = [p0].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [a0].[Id]
+2025-10-24 00:17:53.014 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-24 00:17:53.020 +02:00 [INF] Executed ViewResult - view Index executed in 6.541ms.
+2025-10-24 00:17:53.020 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Index (BCSApp) in 65.4111ms
+2025-10-24 00:17:53.020 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-24 00:17:53.021 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Project - 200 null text/html; charset=utf-8 77.1095ms
+2025-10-24 00:17:53.028 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_vs/browserLink - null null
+2025-10-24 00:17:53.028 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:17:53.029 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.351ms
+2025-10-24 00:17:53.037 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.8653ms
+2025-10-24 00:17:59.420 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Maintenance - null null
+2025-10-24 00:17:59.432 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.MaintenanceController.Index (BCSApp)'
+2025-10-24 00:17:59.437 +02:00 [INF] Route matched with {action = "Index", controller = "Maintenance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.MaintenanceController (BCSApp).
+2025-10-24 00:17:59.441 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-24 00:17:59.475 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [d].[Id], [d].[CreatedAt], [d].[Description], [d].[DocumentType], [d].[FileName], [d].[FilePath], [d].[FileSize], [d].[FileType], [d].[MaintenanceRequestId], [d].[Name], [d].[ProjectId], [d].[TaskId], [d].[UploadedById]
+FROM [MaintenanceRequests] AS [m]
+INNER JOIN [AspNetUsers] AS [a] ON [m].[ClientId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [m].[AssignedToId] = [a0].[Id]
+LEFT JOIN [Projects] AS [p] ON [m].[ProjectId] = [p].[Id]
+LEFT JOIN [Documents] AS [d] ON [m].[Id] = [d].[MaintenanceRequestId]
+ORDER BY [m].[CreatedAt] DESC, [m].[Id], [a].[Id], [a0].[Id], [p].[Id]
+2025-10-24 00:17:59.479 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-24 00:17:59.484 +02:00 [INF] Executed ViewResult - view Index executed in 5.1203ms.
+2025-10-24 00:17:59.484 +02:00 [INF] Executed action BCSApp.Controllers.MaintenanceController.Index (BCSApp) in 46.7228ms
+2025-10-24 00:17:59.484 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.MaintenanceController.Index (BCSApp)'
+2025-10-24 00:17:59.485 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Maintenance - 200 null text/html; charset=utf-8 65.2412ms
+2025-10-24 00:17:59.493 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:17:59.493 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_vs/browserLink - null null
+2025-10-24 00:17:59.496 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.742ms
+2025-10-24 00:17:59.502 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.4747ms
+2025-10-24 00:19:29.221 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Maintenance/Create - null null
+2025-10-24 00:19:29.235 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Client)
+2025-10-24 00:19:29.237 +02:00 [INF] AuthenticationScheme: Identity.Application was forbidden.
+2025-10-24 00:19:29.238 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Maintenance/Create - 302 null null 17.5546ms
+2025-10-24 00:19:29.242 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Account/AccessDenied?ReturnUrl=%2FMaintenance%2FCreate - null null
+2025-10-24 00:19:29.249 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.AccountController.AccessDenied (BCSApp)'
+2025-10-24 00:19:29.251 +02:00 [INF] Route matched with {action = "AccessDenied", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AccessDenied() on controller BCSApp.Controllers.AccountController (BCSApp).
+2025-10-24 00:19:29.253 +02:00 [INF] Executing ViewResult, running view AccessDenied.
+2025-10-24 00:19:29.258 +02:00 [INF] Executed ViewResult - view AccessDenied executed in 6.0851ms.
+2025-10-24 00:19:29.258 +02:00 [INF] Executed action BCSApp.Controllers.AccountController.AccessDenied (BCSApp) in 6.3856ms
+2025-10-24 00:19:29.258 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.AccountController.AccessDenied (BCSApp)'
+2025-10-24 00:19:29.258 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Account/AccessDenied?ReturnUrl=%2FMaintenance%2FCreate - 200 null text/html; charset=utf-8 15.9215ms
+2025-10-24 00:19:29.266 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_vs/browserLink - null null
+2025-10-24 00:19:29.266 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:19:29.267 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.14ms
+2025-10-24 00:19:29.274 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.1481ms
+2025-10-24 00:19:30.845 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Maintenance - null null
+2025-10-24 00:19:30.848 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.MaintenanceController.Index (BCSApp)'
+2025-10-24 00:19:30.848 +02:00 [INF] Route matched with {action = "Index", controller = "Maintenance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.MaintenanceController (BCSApp).
+2025-10-24 00:19:30.851 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-24 00:19:30.854 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [d].[Id], [d].[CreatedAt], [d].[Description], [d].[DocumentType], [d].[FileName], [d].[FilePath], [d].[FileSize], [d].[FileType], [d].[MaintenanceRequestId], [d].[Name], [d].[ProjectId], [d].[TaskId], [d].[UploadedById]
+FROM [MaintenanceRequests] AS [m]
+INNER JOIN [AspNetUsers] AS [a] ON [m].[ClientId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [m].[AssignedToId] = [a0].[Id]
+LEFT JOIN [Projects] AS [p] ON [m].[ProjectId] = [p].[Id]
+LEFT JOIN [Documents] AS [d] ON [m].[Id] = [d].[MaintenanceRequestId]
+ORDER BY [m].[CreatedAt] DESC, [m].[Id], [a].[Id], [a0].[Id], [p].[Id]
+2025-10-24 00:19:30.856 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-24 00:19:30.857 +02:00 [INF] Executed ViewResult - view Index executed in 1.9233ms.
+2025-10-24 00:19:30.857 +02:00 [INF] Executed action BCSApp.Controllers.MaintenanceController.Index (BCSApp) in 9.3246ms
+2025-10-24 00:19:30.858 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.MaintenanceController.Index (BCSApp)'
+2025-10-24 00:19:30.858 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Maintenance - 200 null text/html; charset=utf-8 12.8661ms
+2025-10-24 00:19:30.865 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:19:30.866 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 0.7179ms
+2025-10-24 00:19:31.178 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Project - null null
+2025-10-24 00:19:31.181 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-24 00:19:31.181 +02:00 [INF] Route matched with {action = "Index", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-24 00:19:31.184 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-24 00:19:31.186 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Name], [p0].[Order], [p0].[ProjectId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt]
+FROM [Projects] AS [p]
+LEFT JOIN [AspNetUsers] AS [a] ON [p].[ProjectManagerId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [p].[ClientId] = [a0].[Id]
+LEFT JOIN [ProjectPhases] AS [p0] ON [p].[Id] = [p0].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [a0].[Id]
+2025-10-24 00:19:31.187 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-24 00:19:31.190 +02:00 [INF] Executed ViewResult - view Index executed in 3.1024ms.
+2025-10-24 00:19:31.190 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Index (BCSApp) in 9.5554ms
+2025-10-24 00:19:31.190 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-24 00:19:31.191 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Project - 200 null text/html; charset=utf-8 12.8228ms
+2025-10-24 00:19:31.199 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:19:31.199 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 0.7715ms
+2025-10-24 00:19:44.281 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Home/Dashboard - null null
+2025-10-24 00:19:44.284 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-24 00:19:44.284 +02:00 [INF] Route matched with {action = "Dashboard", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard() on controller BCSApp.Controllers.HomeController (BCSApp).
+2025-10-24 00:19:44.288 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-24 00:19:44.291 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+2025-10-24 00:19:44.292 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[Status] = N'In Progress'
+2025-10-24 00:19:44.294 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+2025-10-24 00:19:44.296 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+WHERE [m].[Status] = N'Pending'
+2025-10-24 00:19:44.298 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+2025-10-24 00:19:44.299 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[DueDate] < GETDATE() AND [t].[Status] <> N'Completed'
+2025-10-24 00:19:44.301 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[ClientId], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Location], [p0].[Name], [p0].[ProjectManagerId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+    FROM [Projects] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+LEFT JOIN [AspNetUsers] AS [a] ON [p0].[ProjectManagerId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [p0].[ClientId] = [a0].[Id]
+ORDER BY [p0].[CreatedAt] DESC
+2025-10-24 00:19:44.305 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m0].[Id], [m0].[ActualCost], [m0].[AssignedToId], [m0].[ClientId], [m0].[CompletedAt], [m0].[CreatedAt], [m0].[Description], [m0].[DueDate], [m0].[EstimatedCost], [m0].[Location], [m0].[Priority], [m0].[ProjectId], [m0].[PropertyType], [m0].[Status], [m0].[Title], [m0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt]
+    FROM [MaintenanceRequests] AS [m]
+    ORDER BY [m].[CreatedAt] DESC
+) AS [m0]
+INNER JOIN [AspNetUsers] AS [a] ON [m0].[ClientId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [m0].[AssignedToId] = [a0].[Id]
+ORDER BY [m0].[CreatedAt] DESC
+2025-10-24 00:19:44.308 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[ActualCost], [t0].[AssignedToId], [t0].[CompletedAt], [t0].[CreatedAt], [t0].[CreatedById], [t0].[Description], [t0].[DueDate], [t0].[EstimatedCost], [t0].[MaintenanceRequestId], [t0].[Priority], [t0].[ProjectPhaseId], [t0].[Status], [t0].[Title], [t0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [t].[Id], [t].[ActualCost], [t].[AssignedToId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedById], [t].[Description], [t].[DueDate], [t].[EstimatedCost], [t].[MaintenanceRequestId], [t].[Priority], [t].[ProjectPhaseId], [t].[Status], [t].[Title], [t].[UpdatedAt]
+    FROM [Tasks] AS [t]
+    ORDER BY [t].[CreatedAt] DESC
+) AS [t0]
+INNER JOIN [AspNetUsers] AS [a] ON [t0].[AssignedToId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [t0].[CreatedById] = [a0].[Id]
+ORDER BY [t0].[CreatedAt] DESC
+2025-10-24 00:19:44.310 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Status], COUNT(*) AS [Count]
+FROM [Projects] AS [p]
+GROUP BY [p].[Status]
+2025-10-24 00:19:44.312 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Priority], COUNT(*) AS [Count]
+FROM [MaintenanceRequests] AS [m]
+GROUP BY [m].[Priority]
+2025-10-24 00:19:44.313 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Status], COUNT(*) AS [Count]
+FROM [Tasks] AS [t]
+GROUP BY [t].[Status]
+2025-10-24 00:19:44.314 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+FROM [Projects] AS [p]
+2025-10-24 00:19:44.314 +02:00 [INF] Executing ViewResult, running view Dashboard.
+2025-10-24 00:19:44.316 +02:00 [INF] Executed ViewResult - view Dashboard executed in 1.712ms.
+2025-10-24 00:19:44.316 +02:00 [INF] Executed action BCSApp.Controllers.HomeController.Dashboard (BCSApp) in 31.4421ms
+2025-10-24 00:19:44.316 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-24 00:19:44.316 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Home/Dashboard - 200 null text/html; charset=utf-8 35.4122ms
+2025-10-24 00:19:44.325 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:19:44.325 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_vs/browserLink - null null
+2025-10-24 00:19:44.325 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 0.6307ms
+2025-10-24 00:19:44.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.4842ms
+2025-10-24 00:19:53.080 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Task - null null
+2025-10-24 00:19:53.083 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.TaskController.Index (BCSApp)'
+2025-10-24 00:19:53.085 +02:00 [INF] Route matched with {action = "Index", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.TaskController (BCSApp).
+2025-10-24 00:19:53.090 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-24 00:19:53.117 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ActualCost], [t].[AssignedToId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedById], [t].[Description], [t].[DueDate], [t].[EstimatedCost], [t].[MaintenanceRequestId], [t].[Priority], [t].[ProjectPhaseId], [t].[Status], [t].[Title], [t].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p].[Id], [p].[ActualCost], [p].[Budget], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Name], [p].[Order], [p].[ProjectId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt]
+FROM [Tasks] AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedToId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[CreatedById] = [a0].[Id]
+LEFT JOIN [ProjectPhases] AS [p] ON [t].[ProjectPhaseId] = [p].[Id]
+LEFT JOIN [MaintenanceRequests] AS [m] ON [t].[MaintenanceRequestId] = [m].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-10-24 00:19:53.122 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-24 00:19:53.126 +02:00 [INF] Executed ViewResult - view Index executed in 4.9206ms.
+2025-10-24 00:19:53.126 +02:00 [INF] Executed action BCSApp.Controllers.TaskController.Index (BCSApp) in 41.3113ms
+2025-10-24 00:19:53.126 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.TaskController.Index (BCSApp)'
+2025-10-24 00:19:53.127 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Task - 200 null text/html; charset=utf-8 47.2702ms
+2025-10-24 00:19:53.134 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_vs/browserLink - null null
+2025-10-24 00:19:53.134 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:19:53.135 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.2584ms
+2025-10-24 00:19:53.142 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.6312ms
+2025-10-24 00:20:14.374 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/Home/Dashboard - null null
+2025-10-24 00:20:14.380 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-24 00:20:14.383 +02:00 [INF] Route matched with {action = "Dashboard", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard() on controller BCSApp.Controllers.HomeController (BCSApp).
+2025-10-24 00:20:14.389 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-24 00:20:14.392 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+2025-10-24 00:20:14.394 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[Status] = N'In Progress'
+2025-10-24 00:20:14.396 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+2025-10-24 00:20:14.397 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+WHERE [m].[Status] = N'Pending'
+2025-10-24 00:20:14.399 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+2025-10-24 00:20:14.400 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[DueDate] < GETDATE() AND [t].[Status] <> N'Completed'
+2025-10-24 00:20:14.402 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[ClientId], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Location], [p0].[Name], [p0].[ProjectManagerId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+    FROM [Projects] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+LEFT JOIN [AspNetUsers] AS [a] ON [p0].[ProjectManagerId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [p0].[ClientId] = [a0].[Id]
+ORDER BY [p0].[CreatedAt] DESC
+2025-10-24 00:20:14.405 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m0].[Id], [m0].[ActualCost], [m0].[AssignedToId], [m0].[ClientId], [m0].[CompletedAt], [m0].[CreatedAt], [m0].[Description], [m0].[DueDate], [m0].[EstimatedCost], [m0].[Location], [m0].[Priority], [m0].[ProjectId], [m0].[PropertyType], [m0].[Status], [m0].[Title], [m0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt]
+    FROM [MaintenanceRequests] AS [m]
+    ORDER BY [m].[CreatedAt] DESC
+) AS [m0]
+INNER JOIN [AspNetUsers] AS [a] ON [m0].[ClientId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [m0].[AssignedToId] = [a0].[Id]
+ORDER BY [m0].[CreatedAt] DESC
+2025-10-24 00:20:14.408 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[ActualCost], [t0].[AssignedToId], [t0].[CompletedAt], [t0].[CreatedAt], [t0].[CreatedById], [t0].[Description], [t0].[DueDate], [t0].[EstimatedCost], [t0].[MaintenanceRequestId], [t0].[Priority], [t0].[ProjectPhaseId], [t0].[Status], [t0].[Title], [t0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [t].[Id], [t].[ActualCost], [t].[AssignedToId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedById], [t].[Description], [t].[DueDate], [t].[EstimatedCost], [t].[MaintenanceRequestId], [t].[Priority], [t].[ProjectPhaseId], [t].[Status], [t].[Title], [t].[UpdatedAt]
+    FROM [Tasks] AS [t]
+    ORDER BY [t].[CreatedAt] DESC
+) AS [t0]
+INNER JOIN [AspNetUsers] AS [a] ON [t0].[AssignedToId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [t0].[CreatedById] = [a0].[Id]
+ORDER BY [t0].[CreatedAt] DESC
+2025-10-24 00:20:14.410 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Status], COUNT(*) AS [Count]
+FROM [Projects] AS [p]
+GROUP BY [p].[Status]
+2025-10-24 00:20:14.412 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Priority], COUNT(*) AS [Count]
+FROM [MaintenanceRequests] AS [m]
+GROUP BY [m].[Priority]
+2025-10-24 00:20:14.413 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Status], COUNT(*) AS [Count]
+FROM [Tasks] AS [t]
+GROUP BY [t].[Status]
+2025-10-24 00:20:14.414 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+FROM [Projects] AS [p]
+2025-10-24 00:20:14.414 +02:00 [INF] Executing ViewResult, running view Dashboard.
+2025-10-24 00:20:14.416 +02:00 [INF] Executed ViewResult - view Dashboard executed in 1.9044ms.
+2025-10-24 00:20:14.416 +02:00 [INF] Executed action BCSApp.Controllers.HomeController.Dashboard (BCSApp) in 32.594ms
+2025-10-24 00:20:14.416 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-24 00:20:14.417 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/Home/Dashboard - 200 null text/html; charset=utf-8 42.8489ms
+2025-10-24 00:20:14.426 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_vs/browserLink - null null
+2025-10-24 00:20:14.426 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-24 00:20:14.427 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.3677ms
+2025-10-24 00:20:14.433 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44340/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.2247ms
+2025-10-24 00:32:05.374 +02:00 [INF] User profile is available. Using 'C:\Users\Mr Emmanuel\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-24 00:32:06.191 +02:00 [WRN] The foreign key property 'DocumentAccess.DocumentId1' was created in shadow state because a conflicting property with the simple name 'DocumentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-24 00:32:06.194 +02:00 [WRN] The foreign key property 'Invoice.QuotationId1' was created in shadow state because a conflicting property with the simple name 'QuotationId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-24 00:32:06.654 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-24 00:32:06.671 +02:00 [INF] Database already contains users, skipping seeding
+2025-10-24 00:32:06.716 +02:00 [INF] Now listening on: http://localhost:5000
+2025-10-24 00:32:06.721 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-24 00:32:06.722 +02:00 [INF] Hosting environment: Development
+2025-10-24 00:32:06.724 +02:00 [INF] Content root path: D:\downloads\Brown-s-Construction-Services-main\Brown-s-Construction-Services-main\BCSApp
+2025-10-24 00:34:39.754 +02:00 [INF] Application is shutting down...
