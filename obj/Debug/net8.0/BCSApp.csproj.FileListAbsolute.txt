@@ -351,3 +351,4 @@ D:\downloads\Brown-s-Construction-Services-main\Brown-s-Construction-Services-ma
 D:\downloads\Brown-s-Construction-Services-main\Brown-s-Construction-Services-main\BCSApp\obj\Debug\net8.0\BCSApp.genruntimeconfig.cache
 D:\downloads\Brown-s-Construction-Services-main\Brown-s-Construction-Services-main\BCSApp\obj\Debug\net8.0\ref\BCSApp.dll
 D:\downloads\Brown-s-Construction-Services-main\Brown-s-Construction-Services-main\BCSApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\downloads\Brown-s-Construction-Services-main\Brown-s-Construction-Services-main\BCSApp\obj\Debug\net8.0\BCSApp.sourcelink.json

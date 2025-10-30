@@ -6,6 +6,7 @@ using Serilog;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Linq;
+using BCSApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,6 +53,10 @@ builder.Services.Configure<FormOptions>(options =>
 {
     options.MultipartBodyLengthLimit = 104857600; // 100MB
 });
+
+builder.Services.AddHttpClient<IDeepSeekService, DeepSeekService>();
+builder.Services.AddScoped<IDeepSeekService, DeepSeekService>();
+
 
 var app = builder.Build();
 
