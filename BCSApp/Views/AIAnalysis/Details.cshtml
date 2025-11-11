@@ -1,0 +1,1238 @@
+﻿@model BCSApp.Models.AIAnalysis
+@{
+    ViewData["Title"] = "AI Analysis Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Enhanced Professional Header -->
+        <div class="bg-white rounded-2xl shadow-lg mb-8 overflow-hidden border border-slate-200">
+            <div class="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 px-8 py-8 relative overflow-hidden">
+                <!-- Subtle background pattern -->
+                <div class="absolute inset-0 opacity-5">
+                    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\" 60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+                </div>
+
+                <div class="relative">
+                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6">
+                        <div class="flex-1">
+                            @{
+                                var icon = Model.AnalysisType switch
+                                {
+                                    "CostEstimation" => "fa-calculator",
+                                    "PredictiveMaintenance" => "fa-tools",
+                                    "RiskAnalysis" => "fa-exclamation-triangle",
+                                    _ => "fa-brain"
+                                };
+                                var analysisTypeDisplay = Model.AnalysisType switch
+                                {
+                                    "CostEstimation" => "Cost Estimation",
+                                    "PredictiveMaintenance" => "Predictive Maintenance",
+                                    "RiskAnalysis" => "Risk Analysis",
+                                    _ => "AI Analysis"
+                                };
+                            }
+                            <div class="flex items-start mb-4">
+                                <div class="p-3 bg-white/10 backdrop-blur-sm rounded-xl mr-4">
+                                    <i class="fas @icon text-white text-2xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center mb-2">
+                                        <span class="px-3 py-1 bg-blue-500/20 text-blue-200 text-xs font-semibold rounded-full uppercase tracking-wider">
+                                            @analysisTypeDisplay
+                                        </span>
+                                        <span class="ml-3 px-2 py-1 bg-emerald-500/20 text-emerald-200 text-xs font-medium rounded-full flex items-center">
+                                            <i class="fas fa-circle text-xs mr-1"></i>
+                                            AI Verified
+                                        </span>
+                                    </div>
+                                    <h1 class="text-4xl font-bold text-white mb-2 tracking-tight">@Model.Title</h1>
+                                    <p class="text-slate-300 text-lg">Comprehensive AI-powered analysis report</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row lg:flex-col gap-3 no-print">
+                            <a href="/AIAnalysis" class="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur text-white rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20 font-medium group">
+                                <i class="fas fa-arrow-left mr-3 group-hover:-translate-x-1 transition-transform"></i>
+                                Back to Dashboard
+                            </a>
+                            <button onclick="window.print()" class="inline-flex items-center px-6 py-3 bg-white text-slate-800 rounded-xl hover:bg-slate-50 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl group">
+                                <i class="fas fa-print mr-3 group-hover:scale-110 transition-transform"></i>
+                                Export Report
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Report Metadata -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 pt-8 border-t border-white/20">
+                        <div class="flex items-center text-white">
+                            <div class="p-2 bg-white/10 rounded-lg mr-3">
+                                <i class="fas fa-calendar-alt opacity-75"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-300 opacity-90">Generated</p>
+                                <p class="font-semibold">@Model.CreatedAt.ToString("MMMM dd, yyyy")</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-white">
+                            <div class="p-2 bg-white/10 rounded-lg mr-3">
+                                <i class="fas fa-clock opacity-75"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-300 opacity-90">Time</p>
+                                <p class="font-semibold">@Model.CreatedAt.ToString("HH:mm")</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-white">
+                            <div class="p-2 bg-white/10 rounded-lg mr-3">
+                                <i class="fas fa-user-circle opacity-75"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-300 opacity-90">Analyst</p>
+                                <p class="font-semibold">@Model.RequestedBy.FirstName @Model.RequestedBy.LastName</p>
+                            </div>
+                        </div>
+                        @if (Model.Project != null)
+                        {
+                            <div class="flex items-center text-white">
+                                <div class="p-2 bg-white/10 rounded-lg mr-3">
+                                    <i class="fas fa-project-diagram opacity-75"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-slate-300 opacity-90">Project</p>
+                                    <p class="font-semibold">@Model.Project.Name</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary Dashboard - Enhanced -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Analysis Type Card -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-all duration-300 group">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="p-3 bg-blue-50 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas @icon text-blue-600 text-xl"></i>
+                    </div>
+                    @{
+                        var statusColor = Model.AnalysisType switch
+                        {
+                            "CostEstimation" => "bg-blue-100 text-blue-700",
+                            "PredictiveMaintenance" => "bg-emerald-100 text-emerald-700",
+                            "RiskAnalysis" => "bg-rose-100 text-rose-700",
+                            _ => "bg-purple-100 text-purple-700"
+                        };
+                    }
+                    <span class="px-3 py-1 @statusColor text-xs font-semibold rounded-full">Active</span>
+                </div>
+                <h3 class="text-slate-500 text-sm font-medium uppercase tracking-wide mb-2">Analysis Type</h3>
+                <p class="text-slate-900 text-lg font-bold">
+                    @analysisTypeDisplay
+                </p>
+                <div class="mt-3 pt-3 border-t border-slate-100">
+                    <p class="text-xs text-slate-500">AI-Powered Analysis</p>
+                </div>
+            </div>
+
+            <!-- Cost Metric Card -->
+
+            <!-- Risk Score Card -->
+            @if (Model.RiskScore.HasValue)
+            {
+                var riskLevel = Model.RiskScore.Value >= 70 ? "High Risk" :
+                Model.RiskScore.Value >= 40 ? "Medium Risk" : "Low Risk";
+                var riskColor = Model.RiskScore.Value >= 70 ? "text-rose-600" :
+                Model.RiskScore.Value >= 40 ? "text-amber-600" : "text-emerald-600";
+                var riskBgColor = Model.RiskScore.Value >= 70 ? "bg-rose-50" :
+                Model.RiskScore.Value >= 40 ? "bg-amber-50" : "bg-emerald-50";
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-all duration-300 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 @riskBgColor rounded-xl group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-chart-line @riskColor text-xl"></i>
+                        </div>
+                        <span class="px-3 py-1 @riskBgColor @riskColor text-xs font-semibold rounded-full">@riskLevel</span>
+                    </div>
+                    <h3 class="text-slate-500 text-sm font-medium uppercase tracking-wide mb-2">Risk Score</h3>
+                    <p class="text-slate-900 text-2xl font-bold">@Model.RiskScore.Value<span class="text-lg text-slate-500">/100</span></p>
+                    <div class="w-full bg-slate-200 rounded-full h-2 mt-3">
+                        <div class="@(Model.RiskScore.Value >= 70 ? "bg-rose-500" : Model.RiskScore.Value >= 40 ? "bg-amber-500" : "bg-emerald-500") h-2 rounded-full transition-all duration-500"
+                             style="width: @Model.RiskScore.Value%"></div>
+                    </div>
+                </div>
+            }
+
+            <!-- Confidence Level Card -->
+            @if (!string.IsNullOrEmpty(Model.ConfidenceLevel))
+            {
+                var confidenceBg = Model.ConfidenceLevel switch
+                {
+                    "High" => "bg-emerald-50 text-emerald-700",
+                    "Low" => "bg-rose-50 text-rose-700",
+                    _ => "bg-amber-50 text-amber-700"
+                };
+                var confidenceIcon = Model.ConfidenceLevel switch
+                {
+                    "High" => "text-emerald-600",
+                    "Low" => "text-rose-600",
+                    _ => "text-amber-600"
+                };
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-all duration-300 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="p-3 @confidenceBg rounded-xl bg-opacity-50 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shield-alt @confidenceIcon text-xl"></i>
+                        </div>
+                        <i class="fas fa-check-circle @confidenceIcon text-sm"></i>
+                    </div>
+                    <h3 class="text-slate-500 text-sm font-medium uppercase tracking-wide mb-2">Confidence Level</h3>
+                    <p class="text-slate-900 text-2xl font-bold">@Model.ConfidenceLevel</p>
+                    <div class="mt-3 pt-3 border-t border-slate-100">
+                        <p class="text-xs text-slate-500">Analysis Reliability</p>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content - 2/3 Width -->
+            <div class="lg:col-span-2 space-y-8">
+
+                <!-- Enhanced Formatted Analysis Report -->
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-slate-200">
+                    <div class="px-8 py-6 bg-gradient-to-r from-slate-50 to-slate-100 border-b border-slate-200">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="p-3 bg-blue-100 rounded-xl mr-4">
+                                    <i class="fas fa-file-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-bold text-slate-900">Comprehensive Analysis Report</h2>
+                                    <p class="text-sm text-slate-600">Detailed findings, data interpretation, and strategic insights</p>
+                                </div>
+                            </div>
+                            <span class="px-4 py-2 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full">Full Report</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div id="formatted-content" class="professional-report">
+                            <!-- Content will be inserted by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Key Recommendations -->
+                @if (!string.IsNullOrEmpty(Model.Recommendations))
+                {
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-slate-200">
+                        <div class="px-8 py-6 bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div class="p-3 bg-emerald-100 rounded-xl mr-4">
+                                        <i class="fas fa-lightbulb text-emerald-600"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-xl font-bold text-slate-900">Strategic Recommendations</h2>
+                                        <p class="text-sm text-slate-600">Actionable insights and next steps for implementation</p>
+                                    </div>
+                                </div>
+                                <span class="px-4 py-2 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full">Action Items</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div id="formatted-recommendations" class="professional-report recommendations-section">
+                                <!-- Content will be inserted by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- Enhanced Visual Analytics Section -->
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-slate-200">
+                    <div class="px-8 py-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-200">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="p-3 bg-blue-100 rounded-xl mr-4">
+                                    <i class="fas fa-chart-bar text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-bold text-slate-900">Visual Analytics Dashboard</h2>
+                                    <p class="text-sm text-slate-600">Data visualization and performance metrics</p>
+                                </div>
+                            </div>
+                            <span class="px-4 py-2 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full">Metrics</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid grid-cols-2 gap-6">
+                            @if (Model.RiskScore.HasValue)
+                            {
+                                <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                                    <h3 class="text-sm font-semibold text-slate-700 mb-4 flex items-center">
+                                        <i class="fas fa-chart-pie text-indigo-500 mr-2"></i>
+                                        Risk Score Analysis
+                                    </h3>
+                                    <div class="flex items-center justify-center h-32">
+                                        <div class="relative w-32 h-32">
+                                            <svg class="transform -rotate-90 w-32 h-32">
+                                                <circle cx="64" cy="64" r="56" stroke="#e2e8f0" stroke-width="12" fill="none" />
+                                                <circle cx="64" cy="64" r="56"
+                                                        stroke="@(Model.RiskScore.Value >= 70 ? "#ef4444" : Model.RiskScore.Value >= 40 ? "#f59e0b" : "#10b981")"
+                                                        stroke-width="12"
+                                                        fill="none"
+                                                        stroke-dasharray="@(Model.RiskScore.Value * 3) 351.68"
+                                                        stroke-linecap="round" />
+                                            </svg>
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <span class="text-2xl font-bold text-slate-900">@Model.RiskScore.Value%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-center text-xs text-slate-600 mt-3">Current risk threshold indicator</p>
+                                </div>
+                            }
+
+
+                            @if (!string.IsNullOrEmpty(Model.ConfidenceLevel))
+                            {
+                                <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm col-span-2">
+                                    <h3 class="text-sm font-semibold text-slate-700 mb-4 flex items-center">
+                                        <i class="fas fa-tachometer-alt text-blue-500 mr-2"></i>
+                                        Analysis Confidence Metrics
+                                    </h3>
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex-1">
+                                            <div class="flex justify-between text-xs text-slate-600 mb-2">
+                                                <span>Low</span>
+                                                <span>Medium</span>
+                                                <span>High</span>
+                                            </div>
+                                            <div class="relative w-full bg-gradient-to-r from-red-200 via-yellow-200 to-green-200 rounded-full h-4">
+                                                <div class="absolute top-1/2 transform -translate-y-1/2 @(Model.ConfidenceLevel == "High" ? "left-[85%]" : Model.ConfidenceLevel == "Low" ? "left-[15%]" : "left-1/2") -translate-x-1/2">
+                                                    <div class="w-6 h-6 bg-white rounded-full shadow-lg border-2 @(Model.ConfidenceLevel == "High" ? "border-green-500" : Model.ConfidenceLevel == "Low" ? "border-red-500" : "border-yellow-500")"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="px-4 py-2 @(Model.ConfidenceLevel == "High" ? "bg-green-100 text-green-700" : Model.ConfidenceLevel == "Low" ? "bg-red-100 text-red-700" : "bg-yellow-100 text-yellow-700") rounded-lg font-bold text-sm">
+                                            @Model.ConfidenceLevel
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Related Project Information -->
+                @if (Model.Project != null)
+                {
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-slate-200">
+                        <div class="px-8 py-6 bg-gradient-to-r from-slate-50 to-slate-100 border-b border-slate-200">
+                            <div class="flex items-center">
+                                <div class="p-3 bg-blue-100 rounded-xl mr-4">
+                                    <i class="fas fa-project-diagram text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-bold text-slate-900">Project Context</h2>
+                                    <p class="text-sm text-slate-600">Related project information and details</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="bg-white rounded-xl p-6 border border-blue-200 shadow-sm">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-bold text-slate-900 mb-3">@Model.Project.Name</h3>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                            <div class="flex items-center text-sm text-slate-700">
+                                                <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+                                                <span class="font-medium">Location:</span>
+                                                <span class="ml-2">@Model.Project.Location</span>
+                                            </div>
+                                            <div class="flex items-center text-sm text-slate-700">
+                                                <i class="fas fa-calendar-check text-blue-500 mr-2"></i>
+                                                <span class="font-medium">Timeline:</span>
+                                                <span class="ml-2">@Model.Project.StartDate.ToString("MMM yyyy") - @Model.Project.EndDate.ToString("MMM yyyy")</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/Project/Details/@Model.ProjectId" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 font-semibold shadow-md hover:shadow-lg text-center whitespace-nowrap group">
+                                        <i class="fas fa-external-link-alt mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                        View Full Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Enhanced Sidebar - 1/3 Width -->
+            <div class="space-y-6">
+
+                <!-- Enhanced Analysis Metadata -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="px-6 py-4 bg-gradient-to-r from-slate-50 to-slate-100 border-b border-slate-200">
+                        <h3 class="text-sm font-bold text-slate-900 flex items-center">
+                            <i class="fas fa-info-circle text-indigo-600 mr-2"></i>
+                            Report Metadata
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="pb-3 border-b border-slate-100">
+                            <p class="text-xs text-slate-500 uppercase tracking-wide mb-1">Analysis ID</p>
+                            <p class="text-sm font-semibold text-slate-900">#AI-@Model.Id.ToString("D6")</p>
+                        </div>
+                        <div class="pb-3 border-b border-slate-100">
+                            <p class="text-xs text-slate-500 uppercase tracking-wide mb-1">Created Date</p>
+                            <p class="text-sm font-semibold text-slate-900">@Model.CreatedAt.ToString("dd MMM yyyy, HH:mm")</p>
+                        </div>
+                        <div class="pb-3 border-b border-slate-100">
+                            <p class="text-xs text-slate-500 uppercase tracking-wide mb-1">Requested By</p>
+                            <div class="flex items-center mt-1">
+                                <div class="w-8 h-8 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold mr-2">
+                                    @Model.RequestedBy.FirstName.Substring(0, 1)@Model.RequestedBy.LastName.Substring(0, 1)
+                                </div>
+                                <p class="text-sm font-semibold text-slate-900">@Model.RequestedBy.FirstName @Model.RequestedBy.LastName</p>
+                            </div>
+                        </div>
+                        @if (Model.Document != null)
+                        {
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase tracking-wide mb-2">Source Document</p>
+                                <div class="flex items-center p-3 bg-slate-50 rounded-lg border border-slate-200">
+                                    <i class="fas fa-file-pdf text-red-500 text-xl mr-3"></i>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs font-medium text-slate-900 truncate">@Model.Document.Name</p>
+                                        <p class="text-xs text-slate-500">@Model.Document.DocumentType</p>
+                                    </div>
+                                    <a href="/Document/Download/@Model.DocumentId" class="ml-2 text-indigo-600 hover:text-indigo-800 transition-colors">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Enhanced Quick Actions -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden no-print">
+                    <div class="px-6 py-4 bg-gradient-to-r from-slate-50 to-slate-100 border-b border-slate-200">
+                        <h3 class="text-sm font-bold text-slate-900 flex items-center">
+                            <i class="fas fa-bolt text-amber-500 mr-2"></i>
+                            Quick Actions
+                        </h3>
+                    </div>
+                    <div class="p-3 space-y-1">
+                        @if (Model.AnalysisType == "CostEstimation")
+                        {
+                            <a href="/AIAnalysis/CostEstimation" class="flex items-center w-full text-left px-4 py-3 text-sm text-slate-700 hover:bg-indigo-50 rounded-xl transition-all duration-300 group">
+                                <i class="fas fa-redo text-indigo-500 mr-3 group-hover:rotate-180 transition-transform duration-500"></i>
+                                <span class="font-medium">New Estimation</span>
+                            </a>
+                        }
+                        @if (Model.AnalysisType == "RiskAnalysis" && Model.ProjectId.HasValue)
+                        {
+                            <a href="/Project/Details/@Model.ProjectId" class="flex items-center w-full text-left px-4 py-3 text-sm text-slate-700 hover:bg-blue-50 rounded-xl transition-all duration-300 group">
+                                <i class="fas fa-project-diagram text-blue-500 mr-3"></i>
+                                <span class="font-medium">View Project</span>
+                            </a>
+                            <a href="/Task/Create?projectId=@Model.ProjectId" class="flex items-center w-full text-left px-4 py-3 text-sm text-slate-700 hover:bg-purple-50 rounded-xl transition-all duration-300 group">
+                                <i class="fas fa-tasks text-purple-500 mr-3"></i>
+                                <span class="font-medium">Create Mitigation Task</span>
+                            </a>
+                        }
+                        @if (Model.AnalysisType == "PredictiveMaintenance")
+                        {
+                            <a href="/Maintenance/Create" class="flex items-center w-full text-left px-4 py-3 text-sm text-slate-700 hover:bg-emerald-50 rounded-xl transition-all duration-300 group">
+                                <i class="fas fa-plus text-emerald-500 mr-3"></i>
+                                <span class="font-medium">Schedule Maintenance</span>
+                            </a>
+                        }
+                        <button onclick="window.print()" class="flex items-center w-full text-left px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-all duration-300 group">
+                            <i class="fas fa-download text-slate-500 mr-3"></i>
+                            <span class="font-medium">Export as PDF</span>
+                        </button>
+                        <a href="/Message/Compose" class="flex items-center w-full text-left px-4 py-3 text-sm text-slate-700 hover:bg-pink-50 rounded-xl transition-all duration-300 group">
+                            <i class="fas fa-share text-pink-500 mr-3"></i>
+                            <span class="font-medium">Share with Team</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enhanced AI Technology Info -->
+                <div class="bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 rounded-2xl shadow-lg overflow-hidden">
+                    <div class="p-6 text-white relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-5">
+                            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\" 40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Cpath d=\"M20 20l-5-5l5-5l5 5l-5 5z\" /%3E%3C/g%3E%3C/svg%3E');"></div>
+                        </div>
+                        <div class="relative">
+                            <div class="flex items-start mb-4">
+                                <div class="p-3 bg-white/10 backdrop-blur rounded-xl mr-3">
+                                    <i class="fas fa-robot text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">AI-Powered Analysis</h3>
+                                    <p class="text-sm opacity-90">Advanced Analytics Engine</p>
+                                </div>
+                            </div>
+                            <p class="text-sm opacity-90 leading-relaxed mb-4">
+                                This comprehensive report was generated using advanced artificial intelligence trained on construction industry data, South African market standards, and regulatory frameworks.
+                            </p>
+                            <div class="pt-4 border-t border-white/20 space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle mr-2 text-emerald-300"></i>
+                                    <span>SANS 10400 Compliant</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle mr-2 text-emerald-300"></i>
+                                    <span>CIDB Standards Aligned</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check-circle mr-2 text-emerald-300"></i>
+                                    <span>Real-time Market Data</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Report Statistics -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="px-6 py-4 bg-gradient-to-r from-slate-50 to-slate-100 border-b border-slate-200">
+                        <h3 class="text-sm font-bold text-slate-900 flex items-center">
+                            <i class="fas fa-chart-line text-emerald-600 mr-2"></i>
+                            Report Statistics
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+                            <span class="text-sm text-slate-600">Analysis Depth</span>
+                            <span class="text-sm font-bold text-slate-900">Comprehensive</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+                            <span class="text-sm text-slate-600">Data Points</span>
+                            <span class="text-sm font-bold text-slate-900">@((Model.AnalysisResult?.Length ?? 0) / 50)+</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+                            <span class="text-sm text-slate-600">Processing Time</span>
+                            <span class="text-sm font-bold text-slate-900">< 30s</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-slate-600">Report Version</span>
+                            <span class="text-sm font-bold text-slate-900">v1.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Compliance Badges -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="px-6 py-4 bg-gradient-to-r from-slate-50 to-slate-100 border-b border-slate-200">
+                        <h3 class="text-sm font-bold text-slate-900 flex items-center">
+                            <i class="fas fa-certificate text-blue-600 mr-2"></i>
+                            Compliance & Standards
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="flex flex-col items-center p-3 bg-blue-50 rounded-lg border border-blue-200">
+                                <i class="fas fa-building text-blue-600 text-xl mb-2"></i>
+                                <span class="text-xs font-semibold text-blue-900 text-center">SANS 10400</span>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-emerald-50 rounded-lg border border-emerald-200">
+                                <i class="fas fa-hard-hat text-emerald-600 text-xl mb-2"></i>
+                                <span class="text-xs font-semibold text-emerald-900 text-center">CIDB</span>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-purple-50 rounded-lg border border-purple-200">
+                                <i class="fas fa-shield-alt text-purple-600 text-xl mb-2"></i>
+                                <span class="text-xs font-semibold text-purple-900 text-center">NHBRC</span>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-amber-50 rounded-lg border border-amber-200">
+                                <i class="fas fa-gavel text-amber-600 text-xl mb-2"></i>
+                                <span class="text-xs font-semibold text-amber-900 text-center">OHS Act</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Support & Help -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="flex items-start mb-4">
+                        <div class="p-2 bg-slate-100 rounded-lg mr-3">
+                            <i class="fas fa-question-circle text-slate-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900 mb-1">Need Help?</h4>
+                            <p class="text-xs text-slate-600">
+                                Contact our support team for assistance with this analysis report.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="/Support" class="block w-full text-center px-4 py-2 bg-slate-50 text-slate-700 rounded-xl hover:bg-slate-100 transition-all duration-300 text-sm font-medium border border-slate-200 hover:shadow-sm group">
+                        <i class="fas fa-headset mr-2 group-hover:scale-110 transition-transform"></i>
+                        Get Support
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Footer Note -->
+        <div class="mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-8 no-print">
+            <div class="flex flex-col md:flex-row items-start justify-between gap-6">
+                <div class="flex items-start flex-1">
+                    <div class="p-2 bg-amber-100 rounded-lg mr-3 mt-0.5">
+                        <i class="fas fa-exclamation-circle text-amber-500"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-sm font-bold text-slate-900 mb-2">Important Notice</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            This AI-generated analysis is provided as a professional advisory tool. All recommendations should be reviewed by qualified professionals before implementation. The analysis is based on data available at the time of generation and complies with South African construction standards and regulations.
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right flex-shrink-0">
+                    <p class="text-xs text-slate-500 mb-1">Generated by</p>
+                    <p class="text-sm font-bold text-indigo-600">BCS AI Analytics Platform</p>
+                    <p class="text-xs text-slate-500 mt-1">© @DateTime.Now.Year All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Enhanced Professional Styles -->
+<style>
+    @@media print {
+        .no-print {
+            display: none !important;
+        }
+
+        body {
+            background: white !important;
+        }
+
+        .bg-gradient-to-br, .bg-gradient-to-r, .bg-slate-50, .bg-slate-100 {
+            background: white !important;
+        }
+
+        .shadow, .shadow-sm, .shadow-md, .shadow-lg {
+            box-shadow: none !important;
+        }
+
+        .border, .border-t, .border-b {
+            border-color: #e2e8f0 !important;
+        }
+
+        .rounded-xl, .rounded-lg {
+            border-radius: 0.5rem !important;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .bg-white {
+            page-break-inside: avoid;
+        }
+
+        body {
+            font-size: 11pt;
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-size: 20pt;
+        }
+
+        h2 {
+            font-size: 16pt;
+        }
+
+        h3 {
+            font-size: 14pt;
+        }
+    }
+
+    /* Enhanced Professional Report Styling */
+    .professional-report {
+        font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        color: #1e293b;
+        line-height: 1.7;
+        font-size: 0.95rem;
+    }
+
+        .professional-report h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #3b82f6;
+            letter-spacing: -0.025em;
+            position: relative;
+        }
+
+            .professional-report h1::before {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+                border-radius: 3px;
+            }
+
+        .professional-report h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin: 1.75rem 0 0.875rem 0;
+            letter-spacing: -0.015em;
+            padding-left: 0.5rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .professional-report h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #374151;
+            margin: 1.5rem 0 0.75rem 0;
+            padding-left: 0.5rem;
+        }
+
+        .professional-report h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #4b5563;
+            margin: 1.25rem 0 0.625rem 0;
+        }
+
+        .professional-report p {
+            margin-bottom: 1.25rem;
+            color: #374151;
+            text-align: justify;
+            line-height: 1.75;
+        }
+
+        .professional-report ul, .professional-report ol {
+            margin: 1rem 0 1.5rem 1.75rem;
+            padding-left: 0.5rem;
+        }
+
+        .professional-report li {
+            margin-bottom: 0.75rem;
+            line-height: 1.75;
+            color: #374151;
+            position: relative;
+        }
+
+        .professional-report ul li {
+            list-style-type: none;
+            padding-left: 1.5rem;
+        }
+
+            .professional-report ul li::before {
+                content: '•';
+                color: #3b82f6;
+                font-weight: bold;
+                position: absolute;
+                left: 0;
+            }
+
+        .professional-report ol li {
+            list-style-type: decimal;
+        }
+
+            .professional-report ol li::marker {
+                color: #3b82f6;
+                font-weight: 600;
+            }
+
+        .professional-report strong {
+            color: #1f2937;
+            font-weight: 600;
+            background: linear-gradient(120deg, #dbeafe 0%, #dbeafe 100%);
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+        }
+
+        .professional-report em {
+            color: #4b5563;
+            font-style: italic;
+        }
+
+        .professional-report hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+            .professional-report hr::after {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: 0;
+                width: 60px;
+                height: 2px;
+                background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            }
+
+        /* Enhanced Table Styling with Consistent White Backgrounds */
+        .professional-report table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+            .professional-report table thead {
+                background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            }
+
+                .professional-report table thead th {
+                    padding: 1rem 1.25rem;
+                    text-align: left;
+                    font-weight: 600;
+                    color: #1e293b !important; /* Dark text color */
+                    font-size: 0.875rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                    border-bottom: 1px solid #e2e8f0;
+                }
+
+                    .professional-report table thead th:first-child {
+                        border-top-left-radius: 0.75rem;
+                    }
+
+                    .professional-report table thead th:last-child {
+                        border-top-right-radius: 0.75rem;
+                    }
+
+            .professional-report table tbody tr {
+                border-bottom: 1px solid #f1f5f9;
+                transition: background-color 0.2s;
+                background: white !important;
+            }
+
+                .professional-report table tbody tr:nth-child(even) {
+                    background: white !important;
+                }
+
+                .professional-report table tbody tr:hover {
+                    background: #f8fafc !important;
+                }
+
+                .professional-report table tbody tr:last-child {
+                    border-bottom: none;
+                }
+
+                    .professional-report table tbody tr:last-child td:first-child {
+                        border-bottom-left-radius: 0.75rem;
+                    }
+
+                    .professional-report table tbody tr:last-child td:last-child {
+                        border-bottom-right-radius: 0.75rem;
+                    }
+
+            .professional-report table td {
+                padding: 1rem 1.25rem;
+                color: #374151;
+                font-size: 0.9375rem;
+                border-bottom: 1px solid #f1f5f9;
+                background: white !important;
+            }
+
+                .professional-report table td:first-child {
+                    font-weight: 500;
+                    color: #1f2937;
+                }
+
+            /* Nested Lists in Tables */
+            .professional-report table ul {
+                margin: 0.25rem 0 0.25rem 1rem;
+                padding-left: 0;
+            }
+
+            .professional-report table li {
+                margin-bottom: 0.375rem;
+                font-size: 0.875rem;
+                background: transparent;
+            }
+
+        /* Enhanced Callout Boxes */
+        .professional-report .callout {
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3b82f6;
+            background: linear-gradient(to right, #eff6ff, #f8fafc);
+            border-radius: 0.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .professional-report .callout::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 4px;
+                height: 100%;
+                background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+            }
+
+        .professional-report .callout-warning {
+            border-left-color: #f59e0b;
+            background: linear-gradient(to right, #fffbeb, #f8fafc);
+        }
+
+            .professional-report .callout-warning::before {
+                background: linear-gradient(180deg, #f59e0b, #d97706);
+            }
+
+        .professional-report .callout-success {
+            border-left-color: #10b981;
+            background: linear-gradient(to right, #ecfdf5, #f8fafc);
+        }
+
+            .professional-report .callout-success::before {
+                background: linear-gradient(180deg, #10b981, #059669);
+            }
+
+    /* Enhanced Recommendations Section */
+    .recommendations-section {
+        background: white !important;
+        border-radius: 1rem;
+        padding: 2rem;
+        border: 1px solid #d1fae5;
+    }
+
+        .recommendations-section h1,
+        .recommendations-section h2,
+        .recommendations-section h3 {
+            color: #065f46;
+        }
+
+        .recommendations-section ul li::before {
+            color: #059669;
+        }
+
+        .recommendations-section table {
+            background: white;
+            border: 1px solid #d1fae5;
+        }
+
+            .recommendations-section table thead {
+                background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            }
+
+            .recommendations-section table tbody tr {
+                background: white !important;
+            }
+
+                .recommendations-section table tbody tr:hover {
+                    background: #f0fdf4 !important;
+                }
+
+    /* Enhanced Numbered Section Styling */
+    .professional-report .numbered-section {
+        counter-reset: section;
+    }
+
+        .professional-report .numbered-section h2::before {
+            counter-increment: section;
+            content: counter(section) ". ";
+            color: #3b82f6;
+            font-weight: 700;
+        }
+
+    /* Enhanced Cost Highlight */
+    .professional-report .cost-highlight {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #059669;
+        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        display: inline-block;
+        margin: 0.5rem 0;
+        border: 1px solid #a7f3d0;
+    }
+
+    /* Enhanced Risk Badge */
+    .professional-report .risk-badge {
+        display: inline-block;
+        padding: 0.375rem 0.875rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border: 1px solid;
+    }
+
+    .professional-report .risk-high {
+        background: #fef2f2;
+        color: #dc2626;
+        border-color: #fecaca;
+    }
+
+    .professional-report .risk-medium {
+        background: #fffbeb;
+        color: #d97706;
+        border-color: #fed7aa;
+    }
+
+    .professional-report .risk-low {
+        background: #f0fdf4;
+        color: #059669;
+        border-color: #a7f3d0;
+    }
+
+    /* Enhanced Scrollbar */
+    .professional-report::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .professional-report::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 4px;
+    }
+
+    .professional-report::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+    }
+
+        .professional-report::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+    .transition-all {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @@keyframes fillCircle {
+        from {
+            stroke-dasharray: 0 351.68;
+        }
+    }
+
+    circle[stroke-dasharray] {
+        animation: fillCircle 1.5s ease-out;
+    }
+
+    /* Enhanced hover effects */
+    .group:hover .group-hover\:scale-110 {
+        transform: scale(1.1);
+    }
+
+    .group:hover .group-hover\:translate-x-1 {
+        transform: translateX(0.25rem);
+    }
+
+    .group:hover .group-hover\:-translate-x-1 {
+        transform: translateX(-0.25rem);
+    }
+
+    /* Ensure all table rows have white backgrounds */
+    table tbody tr,
+    .professional-report table tbody tr,
+    table tr,
+    .professional-report table tr {
+        background-color: white !important;
+    }
+
+        /* Override any potential zebra striping */
+        table tbody tr:nth-child(odd),
+        table tbody tr:nth-child(even),
+        .professional-report table tbody tr:nth-child(odd),
+        .professional-report table tbody tr:nth-child(even) {
+            background-color: white !important;
+        }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const analysisContent = @Html.Raw(Json.Serialize(Model.AnalysisResult));
+        const recommendationsContent = @Html.Raw(Json.Serialize(Model.Recommendations ?? ""));
+
+        // Format main content
+        const formattedContent = formatProfessionalReport(analysisContent);
+        document.getElementById('formatted-content').innerHTML = formattedContent;
+
+        // Format recommendations
+        if (recommendationsContent) {
+            const formattedRecommendations = formatProfessionalReport(recommendationsContent);
+            const recommendationsElement = document.getElementById('formatted-recommendations');
+            if (recommendationsElement) {
+                recommendationsElement.innerHTML = formattedRecommendations;
+            }
+        }
+
+        // Add loading animation
+        const elements = document.querySelectorAll('.bg-white');
+        elements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+        });
+
+        // Animate elements in
+        setTimeout(() => {
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }, 100);
+
+        // Print handlers
+        window.addEventListener('beforeprint', () => {
+            document.body.classList.add('printing');
+            // Add print-specific enhancements
+            document.querySelectorAll('.professional-report').forEach(el => {
+                el.style.fontSize = '11pt';
+            });
+        });
+
+        window.addEventListener('afterprint', () => {
+            document.body.classList.remove('printing');
+            // Restore original styles
+            document.querySelectorAll('.professional-report').forEach(el => {
+                el.style.fontSize = '';
+            });
+        });
+
+        // Ensure all table rows have white backgrounds after content is loaded
+        setTimeout(() => {
+            document.querySelectorAll('table tbody tr, .professional-report table tbody tr').forEach(tr => {
+                tr.style.backgroundColor = 'white';
+            });
+        }, 500);
+    });
+
+    function formatProfessionalReport(text) {
+        if (!text) return '<p class="text-slate-500 italic">No analysis content available.</p>';
+
+        // Remove all hashtags and asterisks first
+        text = text.replace(/[#*]+/g, '');
+
+        // Convert horizontal rules
+        text = text.replace(/^---+$/gm, '<hr class="section-divider">');
+
+        // Enhanced header detection with proper hierarchy
+        text = text.replace(/^(\d+)\.\s+([A-Z][A-Za-z\s]+)$/gm, '<h2>$1. $2</h2>');
+        text = text.replace(/^([a-z])\)\s+(.+?):/gim, '<h3>$1) $2</h3>');
+
+        // Detect section headers (lines in all caps or title case)
+        text = text.replace(/^([A-Z][A-Za-z\s]{10,}):?$/gm, '<h2>$1</h2>');
+
+        // Enhanced bold text detection
+        text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        text = text.replace(/\b([A-Z][A-Za-z\s]{2,}?):/g, '<strong>$1:</strong>');
+
+        // Enhanced table detection and formatting
+        const lines = text.split('\n');
+        let inTable = false;
+        let tableContent = '';
+        let processedText = '';
+
+        lines.forEach(line => {
+            if (line.includes('|') && line.split('|').length > 2) {
+                if (!inTable) {
+                    inTable = true;
+                    tableContent = '<table>';
+                }
+
+                const cells = line.split('|').filter(cell => cell.trim()).map(cell => cell.trim());
+                const isHeader = cells.some(cell => /^[A-Z]/.test(cell.trim())) || line.includes('---');
+
+                if (line.includes('---')) {
+                    tableContent += '<thead><tr>' + cells.map(cell => `<th>${cell}</th>`).join('') + '</tr></thead><tbody>';
+                } else if (isHeader) {
+                    tableContent += '<thead><tr>' + cells.map(cell => `<th>${cell}</th>`).join('') + '</tr></thead><tbody>';
+                } else {
+                    tableContent += '<tr style="background-color: white !important;">' + cells.map(cell => `<td style="background-color: white !important;">${cell}</td>`).join('') + '</tr>';
+                }
+            } else {
+                if (inTable) {
+                    inTable = false;
+                    tableContent += '</tbody></table>';
+                    processedText += tableContent + '\n' + line;
+                } else {
+                    processedText += line + '\n';
+                }
+            }
+        });
+
+        if (inTable) {
+            tableContent += '</tbody></table>';
+            processedText += tableContent;
+        }
+
+        text = processedText;
+
+        // Enhanced bullet points with proper nesting
+        text = text.replace(/^•\s+(.+)$/gm, '<li>$1</li>');
+        text = text.replace(/^\-\s+(.+)$/gm, '<li>$1</li>');
+
+        // Wrap consecutive list items
+        text = text.replace(/(<li>.*?<\/li>\s*)+/gs, function(match) {
+            return '<ul>' + match + '</ul>';
+        });
+
+        // Numbered lists
+        text = text.replace(/^(\d+)\.\s+(.+)$/gm, '<li>$2</li>');
+        text = text.replace(/(<li>.*?<\/li>\s*)+/gs, function(match) {
+            if (match.match(/^\s*<li>\d+\./)) {
+                return '<ol>' + match + '</ol>';
+            }
+            return match;
+        });
+
+        // Enhanced cost highlights
+        text = text.replace(/R\s*([\d,]+(?:\.\d{2})?)/g, '<span class="cost-highlight">R $1</span>');
+
+        // Enhanced risk badges
+        text = text.replace(/\b(HIGH|MEDIUM|LOW)\s+(RISK|IMPACT)\b/gi, function(match) {
+            const level = match.toLowerCase().split(' ')[0];
+            return `<span class="risk-badge risk-${level}">${match}</span>`;
+        });
+
+        // Create paragraphs from remaining text blocks
+        const sections = text.split('\n\n');
+        text = sections.map(section => {
+            section = section.trim();
+            if (!section) return '';
+            if (section.startsWith('<h') || section.startsWith('<ul') ||
+                section.startsWith('<ol') || section.startsWith('<table') ||
+                section.startsWith('<hr') || section.startsWith('<li')) {
+                return section;
+            }
+            return '<p>' + section.replace(/\n/g, '<br>') + '</p>';
+        }).join('\n\n');
+
+        // Clean up any remaining markdown artifacts
+        text = text.replace(/[\*#_`]/g, '');
+
+        // Add callout boxes for important notes
+        text = text.replace(/Note:\s*(.+?)(?=\n\n|$)/gi, '<div class="callout"><strong>Note:</strong> $1</div>');
+        text = text.replace(/Warning:\s*(.+?)(?=\n\n|$)/gi, '<div class="callout callout-warning"><strong>Warning:</strong> $1</div>');
+        text = text.replace(/Important:\s*(.+?)(?=\n\n|$)/gi, '<div class="callout callout-success"><strong>Important:</strong> $1</div>');
+
+        return text || '<p class="text-slate-500 italic">No formatted content available.</p>';
+    }
+</script>

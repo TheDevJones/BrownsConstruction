@@ -1,0 +1,225 @@
+@model BCSApp.Models.Task
+@{
+    ViewData["Title"] = "Task Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="min-h-screen bg-gray-50 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">@Model.Title</h1>
+                    <p class="mt-2 text-gray-600">Task #@Model.Id</p>
+                </div>
+                <div class="flex space-x-3">
+                    <a href="/Task" class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Tasks
+                    </a>
+                    <a href="/Task/Edit/@Model.Id" class="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-edit mr-2"></i>
+                        Edit Task
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Task Information -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Task Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Title</label>
+                            <p class="text-gray-900">@Model.Title</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Due Date</label>
+                            <p class="text-gray-900">@Model.DueDate.ToString("MMM dd, yyyy")</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Priority</label>
+                            <p class="text-gray-900">
+                                @{
+                                    var priorityClass = Model.Priority switch
+                                    {
+                                        "High" => "bg-red-100 text-red-800",
+                                        "Medium" => "bg-yellow-100 text-yellow-800",
+                                        "Low" => "bg-green-100 text-green-800",
+                                        "Critical" => "bg-red-100 text-red-800",
+                                        _ => "bg-gray-100 text-gray-800"
+                                    };
+                                }
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full @priorityClass">
+                                    @Model.Priority
+                                </span>
+                            </p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Status</label>
+                            <p class="text-gray-900">
+                                @{
+                                    var statusClass = Model.Status switch
+                                    {
+                                        "Pending" => "bg-yellow-100 text-yellow-800",
+                                        "In Progress" => "bg-blue-100 text-blue-800",
+                                        "Completed" => "bg-green-100 text-green-800",
+                                        "Cancelled" => "bg-red-100 text-red-800",
+                                        _ => "bg-gray-100 text-gray-800"
+                                    };
+                                }
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full @statusClass">
+                                    @Model.Status
+                                </span>
+                            </p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Estimated Cost</label>
+                            <p class="text-gray-900">R @Model.EstimatedCost.ToString("N2")</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-500">Actual Cost</label>
+                            <p class="text-gray-900">R @Model.ActualCost.ToString("N2")</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label class="text-sm font-medium text-gray-500">Description</label>
+                        <p class="text-gray-900 mt-1">@Model.Description</p>
+                    </div>
+                </div>
+
+                <!-- Task Updates -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Task Updates</h3>
+                        <button class="inline-flex items-center px-3 py-1 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors text-sm">
+                            <i class="fas fa-plus mr-1"></i>
+                            Add Update
+                        </button>
+                    </div>
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-history text-4xl mb-4"></i>
+                        <p>No updates yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Status Card -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Task Status</h3>
+                    @{
+                        var taskStatusClass = Model.Status switch
+                        {
+                            "Pending" => "bg-yellow-100 text-yellow-800",
+                            "In Progress" => "bg-blue-100 text-blue-800",
+                            "Completed" => "bg-green-100 text-green-800",
+                            "Cancelled" => "bg-red-100 text-red-800",
+                            _ => "bg-gray-100 text-gray-800"
+                        };
+                    }
+                    <span class="inline-flex px-3 py-1 text-sm font-semibold rounded-full @taskStatusClass">
+                        @Model.Status
+                    </span>
+                </div>
+
+                <!-- Assignment -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Assignment</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">@(Model.AssignedTo?.FirstName + " " + Model.AssignedTo?.LastName)</p>
+                                <p class="text-xs text-gray-500">@Model.AssignedTo?.Role</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">@(Model.CreatedBy?.FirstName + " " + Model.CreatedBy?.LastName)</p>
+                                <p class="text-xs text-gray-500">Created By</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cost Overview -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Cost Overview</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Estimated</span>
+                            <span class="text-sm font-medium">R @Model.EstimatedCost.ToString("N2")</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Actual</span>
+                            <span class="text-sm font-medium">R @Model.ActualCost.ToString("N2")</span>
+                        </div>
+                        <div class="border-t pt-2">
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Variance</span>
+                                <span class="text-sm font-medium @((Model.ActualCost - Model.EstimatedCost) >= 0 ? "text-red-600" : "text-green-600")">
+                                    R @((Model.ActualCost - Model.EstimatedCost).ToString("N2"))
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Items -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Related Items</h3>
+                    <div class="space-y-2">
+                        @if (Model.ProjectPhase != null)
+                        {
+                            <a href="/Project/Details/@Model.ProjectPhase.ProjectId" class="block text-sm text-brand-blue hover:text-blue-600">
+                                <i class="fas fa-project-diagram mr-2"></i>
+                                @Model.ProjectPhase.Project?.Name
+                            </a>
+                        }
+                        @if (Model.MaintenanceRequest != null)
+                        {
+                            <a href="/Maintenance/Details/@Model.MaintenanceRequest.Id" class="block text-sm text-brand-blue hover:text-blue-600">
+                                <i class="fas fa-tools mr-2"></i>
+                                @Model.MaintenanceRequest.Title
+                            </a>
+                        }
+                        <div class="text-sm text-gray-500">
+                            <i class="fas fa-calendar mr-2"></i>
+                            Created @Model.CreatedAt.ToString("MMM dd, yyyy")
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Quick Actions</h3>
+                    <div class="space-y-2">
+                        <button class="block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                            <i class="fas fa-edit mr-2"></i>
+                            Update Status
+                        </button>
+                        <button class="block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                            <i class="fas fa-comment mr-2"></i>
+                            Add Comment
+                        </button>
+                        <button class="block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg">
+                            <i class="fas fa-clock mr-2"></i>
+                            Log Time
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

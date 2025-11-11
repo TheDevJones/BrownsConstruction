@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Dr Majoko Projects Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-orange': '#FF6B35',
+                        'brand-navy': '#1E3A8A',
+                        'brand-blue': '#3B82F6',
+                        'brand-purple': '#8B5CF6'
+                    }
+                }
+            }
+        }
+
+        // Function to fetch and update unread message count
+        async function updateUnreadCount() {
+            try {
+                const response = await fetch('/Message/GetUnreadCount');
+                if (response.ok) {
+                    const count = await response.json();
+                    const badge = document.getElementById('unread-badge');
+                    const sidebarBadge = document.getElementById('sidebar-unread-badge');
+
+                    if (count > 0) {
+                        if (badge) {
+                            badge.textContent = count > 99 ? '99+' : count;
+                            badge.classList.remove('hidden');
+                        }
+                        if (sidebarBadge) {
+                            sidebarBadge.textContent = count > 99 ? '99+' : count;
+                            sidebarBadge.classList.remove('hidden');
+                        }
+                    } else {
+                        if (badge) badge.classList.add('hidden');
+                        if (sidebarBadge) sidebarBadge.classList.add('hidden');
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching unread count:', error);
+            }
+        }
+
+        // Update count on page load and every 30 seconds for authenticated users
+        document.addEventListener('DOMContentLoaded', function() {
+        @if (User.Identity.IsAuthenticated)
+        {
+            <text>
+                    updateUnreadCount();
+                    setInterval(updateUnreadCount, 30000);
+            </text>
+        }
+        });
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <header>
+        <nav class="bg-white shadow-sm border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-r from-brand-orange to-brand-purple rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-building text-white text-lg"></i>
+                            </div>
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="text-xl font-bold text-brand-navy">Dr Majoko Projects</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a class="text-gray-700 hover:text-brand-orange transition-colors duration-200" asp-area="" asp-controller="Home" asp-action="Dashboard">
+                                    <i class="fas fa-tachometer-alt mr-1"></i> Dashboard
+                                </a>
+                                <a class="text-gray-700 hover:text-brand-orange transition-colors duration-200" asp-area="" asp-controller="Project" asp-action="Index">
+                                    <i class="fas fa-project-diagram mr-1"></i> Projects
+                                </a>
+                                <a class="text-gray-700 hover:text-brand-orange transition-colors duration-200" asp-area="" asp-controller="Maintenance" asp-action="Index">
+                                    <i class="fas fa-tools mr-1"></i> Maintenance
+                                </a>
+                                <a class="text-gray-700 hover:text-brand-orange transition-colors duration-200" asp-area="" asp-controller="Task" asp-action="Index">
+                                    <i class="fas fa-tasks mr-1"></i> Tasks
+                                </a>
+                                <a class="text-gray-700 hover:text-brand-orange transition-colors duration-200 relative" asp-area="" asp-controller="Message" asp-action="Inbox">
+                                    <i class="fas fa-envelope mr-1"></i> Messages
+                                    <span id="unread-badge" class="absolute -top-2 -right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-500 rounded-full hidden"></span>
+                                </a>
+                                <a class="text-gray-700 hover:text-brand-orange transition-colors duration-200" asp-area="" asp-controller="Document" asp-action="Index">
+                                    <i class="fas fa-file-alt mr-1"></i> Documents
+                                </a>
+                            }
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="flex items-center space-x-2">
+                                <div class="w-8 h-8 bg-gradient-to-r from-brand-navy to-brand-blue rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user text-white text-sm"></i>
+                                </div>
+                                <span class="text-sm text-gray-700">@User.Identity.Name</span>
+                                <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="text-gray-500 hover:text-gray-700 transition-colors duration-200" title="Logout">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="text-gray-700 hover:text-brand-orange transition-colors duration-200" asp-area="" asp-controller="Account" asp-action="Login">
+                                <i class="fas fa-sign-in-alt mr-1"></i> Login
+                            </a>
+                            <a class="text-gray-700 hover:text-brand-orange transition-colors duration-200" asp-area="" asp-controller="Account" asp-action="Register">
+                                <i class="fas fa-user-plus mr-1"></i> Register
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="flex">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="w-64 bg-gradient-to-b from-brand-navy to-brand-blue min-h-screen shadow-lg">
+                <div class="p-6">
+                    <h6 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">
+                        <i class="fas fa-bars mr-2"></i> Navigation
+                    </h6>
+                    <nav class="space-y-2">
+                        <a class="flex items-center px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-200 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["Action"]?.ToString() == "Dashboard" ? "bg-white bg-opacity-20" : "")" asp-controller="Home" asp-action="Dashboard">
+                            <i class="fas fa-tachometer-alt mr-3"></i> Dashboard
+                        </a>
+                        <a class="flex items-center px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-200 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Project" ? "bg-white bg-opacity-20" : "")" asp-controller="Project" asp-action="Index">
+                            <i class="fas fa-project-diagram mr-3"></i> Projects
+                        </a>
+                        <a class="flex items-center px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-200 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Maintenance" ? "bg-white bg-opacity-20" : "")" asp-controller="Maintenance" asp-action="Index">
+                            <i class="fas fa-tools mr-3"></i> Maintenance
+                        </a>
+                        <a class="flex items-center px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-200 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Task" ? "bg-white bg-opacity-20" : "")" asp-controller="Task" asp-action="Index">
+                            <i class="fas fa-tasks mr-3"></i> Tasks
+                        </a>
+                        <a class="flex items-center px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-200 relative @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Message" ? "bg-white bg-opacity-20" : "")" asp-controller="Message" asp-action="Inbox">
+                            <i class="fas fa-envelope mr-3"></i> Messages
+                            <span id="sidebar-unread-badge" class="ml-auto inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-500 rounded-full hidden"></span>
+                        </a>
+                        <a class="flex items-center px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-200 @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Document" ? "bg-white bg-opacity-20" : "")" asp-controller="Document" asp-action="Index">
+                            <i class="fas fa-file-alt mr-3"></i> Documents
+                        </a>
+                        <hr class="border-white border-opacity-20 my-4">
+                        <a class="flex items-center px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-200" href="#">
+                            <i class="fas fa-chart-bar mr-3"></i> Reports
+                        </a>
+                   
+                        <hr class="border-white border-opacity-20 my-4">
+                        <a class="flex items-center px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-200" href="/AIAnalysis">
+                            <i class="fas fa-brain mr-1"></i> AI Analysis
+                        </a>
+                        <a class="flex items-center px-4 py-3 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-200" href="#">
+                            <i class="fas fa-cog mr-3"></i> Settings
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            <div class="flex-1 p-6">
+                <main role="main">
+                    @RenderBody()
+                </main>
+            </div>
+        }
+        else
+        {
+            <div class="w-full p-6">
+                <main role="main">
+                    @RenderBody()
+                </main>
+            </div>
+        }
+    </div>
+
+    <footer class="border-t text-sm text-gray-500 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            &copy; 2024 - Dr Majoko Projects (Pty) Ltd - <a class="text-brand-blue hover:text-brand-orange transition-colors duration-200" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

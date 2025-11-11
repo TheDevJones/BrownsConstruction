@@ -1,0 +1,156 @@
+﻿@model List<BCSApp.Models.Message>
+@{
+    ViewData["Title"] = "Sent Messages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="min-h-screen bg-gray-50 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Sent Messages</h1>
+                    <p class="mt-2 text-gray-600">Messages you have sent</p>
+                </div>
+                <div class="flex space-x-3">
+                    <a href="/Message/Compose" class="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-pen mr-2"></i>
+                        Compose
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Navigation -->
+        <div class="bg-white shadow rounded-lg mb-6">
+            <div class="flex border-b">
+                <a href="/Message/Inbox" class="px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-inbox mr-2"></i>Inbox
+                </a>
+                <a href="/Message/Sent" class="px-6 py-3 text-sm font-medium text-brand-blue border-b-2 border-brand-blue">
+                    <i class="fas fa-paper-plane mr-2"></i>Sent
+                </a>
+                <a href="/Message/Conversations" class="px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-comments mr-2"></i>Conversations
+                </a>
+            </div>
+        </div>
+
+        <!-- Messages List -->
+        <div class="bg-white shadow rounded-lg">
+            @if (Model.Any())
+            {
+                <div class="divide-y divide-gray-200">
+                    @foreach (var message in Model)
+                    {
+                        <a href="/Message/Details/@message.Id" class="block hover:bg-gray-50 transition-colors">
+                            <div class="px-6 py-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center flex-1 min-w-0">
+                                        <!-- Avatar -->
+                                        <div class="flex-shrink-0">
+                                            <div class="w-10 h-10 bg-gradient-to-r from-brand-orange to-brand-purple rounded-full flex items-center justify-center">
+                                                <span class="text-white font-medium text-sm">
+                                                    @message.Recipient.FirstName.Substring(0, 1)@message.Recipient.LastName.Substring(0, 1)
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Message Info -->
+                                        <div class="ml-4 flex-1 min-w-0">
+                                            <div class="flex items-center justify-between">
+                                                <p class="text-sm font-medium text-gray-900 truncate">
+                                                    To: @message.Recipient.FirstName @message.Recipient.LastName
+                                                    @if (message.IsRead)
+                                                    {
+                                                        <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                                                            <i class="fas fa-check-double mr-1"></i>Read
+                                                        </span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800">
+                                                            <i class="fas fa-check mr-1"></i>Sent
+                                                        </span>
+                                                    }
+                                                </p>
+                                                <p class="text-sm text-gray-500">
+                                                    @if (message.CreatedAt.Date == DateTime.Now.Date)
+                                                    {
+                                                        @message.CreatedAt.ToString("HH:mm")
+                                                    }
+                                                    else if (message.CreatedAt.Date == DateTime.Now.AddDays(-1).Date)
+                                                    {
+                                                        <text>Yesterday</text>
+                                                    }
+                                                    else
+                                                    {
+                                                        @message.CreatedAt.ToString("MMM dd")
+                                                    }
+                                                </p>
+                                            </div>
+                                            <p class="text-sm text-gray-900 truncate font-medium">
+                                                @message.Subject
+                                            </p>
+                                            <p class="text-sm text-gray-500 truncate mt-1">
+                                                @message.Content
+                                            </p>
+
+                                            <!-- Tags -->
+                                            <div class="flex items-center space-x-2 mt-2">
+                                                @if (message.ProjectId != null)
+                                                {
+                                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-800">
+                                                        <i class="fas fa-project-diagram mr-1"></i>Project
+                                                    </span>
+                                                }
+                                                @if (message.MaintenanceRequestId != null)
+                                                {
+                                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                                                        <i class="fas fa-tools mr-1"></i>Maintenance
+                                                    </span>
+                                                }
+                                                @if (message.TaskId != null)
+                                                {
+                                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                                                        <i class="fas fa-tasks mr-1"></i>Task
+                                                    </span>
+                                                }
+                                                @if (message.MessageType == "Alert")
+                                                {
+                                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">
+                                                        <i class="fas fa-exclamation-triangle mr-1"></i>Alert
+                                                    </span>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Arrow Icon -->
+                                    <div class="ml-4">
+                                        <i class="fas fa-chevron-right text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="px-6 py-12 text-center">
+                    <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-paper-plane text-gray-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">No sent messages</h3>
+                    <p class="text-gray-500 mb-6">You haven't sent any messages yet.</p>
+                    <a href="/Message/Compose" class="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-pen mr-2"></i>
+                        Compose Message
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

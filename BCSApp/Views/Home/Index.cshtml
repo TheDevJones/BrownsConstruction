@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+<div class="mb-6">
+    <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
+    <p class="text-gray-600">Overview of all system activities</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-center">
+            <div class="p-2 bg-blue-100 rounded-lg">
+                <i class="fas fa-project-diagram text-brand-blue"></i>
+            </div>
+            <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">Active Projects</p>
+                <p class="text-2xl font-semibold text-gray-900">12</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-center">
+            <div class="p-2 bg-orange-100 rounded-lg">
+                <i class="fas fa-exclamation-triangle text-brand-orange"></i>
+            </div>
+            <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">Pending Requests</p>
+                <p class="text-2xl font-semibold text-gray-900">8</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-center">
+            <div class="p-2 bg-green-100 rounded-lg">
+                <i class="fas fa-chart-line text-green-600"></i>
+            </div>
+            <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">Reports</p>
+                <p class="text-2xl font-semibold text-gray-900">24</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-center">
+            <div class="p-2 bg-purple-100 rounded-lg">
+                <i class="fas fa-envelope text-purple-600"></i>
+            </div>
+            <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">Messages</p>
+                <p class="text-2xl font-semibold text-gray-900">15</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white rounded-lg shadow p-6">
+    <h2 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a asp-controller="Maintenance" asp-action="Index" class="flex items-center justify-between p-4 border rounded-md hover:bg-gray-50">
+            <div class="flex items-center">
+                <i class="fas fa-tools text-brand-blue mr-3"></i>
+                <span>Maintenance</span>
+            </div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </a>
+        <a asp-controller="Home" asp-action="Privacy" class="flex items-center justify-between p-4 border rounded-md hover:bg-gray-50">
+            <div class="flex items-center">
+                <i class="fas fa-file-alt text-brand-blue mr-3"></i>
+                <span>Documents</span>
+            </div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </a>
+        <a asp-controller="Home" asp-action="Privacy" class="flex items-center justify-between p-4 border rounded-md hover:bg-gray-50">
+            <div class="flex items-center">
+                <i class="fas fa-comments text-brand-blue mr-3"></i>
+                <span>Messaging</span>
+            </div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </a>
+        <a asp-controller="Home" asp-action="Privacy" class="flex items-center justify-between p-4 border rounded-md hover:bg-gray-50">
+            <div class="flex items-center">
+                <i class="fas fa-chart-pie text-brand-blue mr-3"></i>
+                <span>Reports</span>
+            </div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,154 @@
+@model BCSApp.Models.Task
+@{
+    ViewData["Title"] = "Create Task";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="min-h-screen bg-gray-50 py-6">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Create New Task</h1>
+                    <p class="mt-2 text-gray-600">Assign a new task to team members</p>
+                </div>
+                <a href="/Task" class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Back to Tasks
+                </a>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <div class="bg-white shadow rounded-lg">
+            <form asp-action="Create" method="post" class="p-6">
+                <div asp-validation-summary="ModelOnly" class="text-red-600 mb-6"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Task Title -->
+                    <div>
+                        <label asp-for="Title" class="block text-sm font-medium text-gray-700 mb-2">Task Title *</label>
+                        <input asp-for="Title" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="Enter task title" />
+                        <span asp-validation-for="Title" class="text-red-600 text-sm"></span>
+                    </div>
+
+                    <!-- Due Date -->
+                    <div>
+                        <label asp-for="DueDate" class="block text-sm font-medium text-gray-700 mb-2">Due Date *</label>
+                        <input asp-for="DueDate" type="date" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent" />
+                        <span asp-validation-for="DueDate" class="text-red-600 text-sm"></span>
+                    </div>
+
+                    <!-- Priority -->
+                    <div>
+                        <label asp-for="Priority" class="block text-sm font-medium text-gray-700 mb-2">Priority *</label>
+                        <select asp-for="Priority" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                            <option value="">Select Priority</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                        <span asp-validation-for="Priority" class="text-red-600 text-sm"></span>
+                    </div>
+
+                    <!-- Status -->
+                    <div>
+                        <label asp-for="Status" class="block text-sm font-medium text-gray-700 mb-2">Status *</label>
+                        <select asp-for="Status" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                            <option value="">Select Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                        <span asp-validation-for="Status" class="text-red-600 text-sm"></span>
+                    </div>
+
+                    <!-- Estimated Cost -->
+                    <div>
+                        <label asp-for="EstimatedCost" class="block text-sm font-medium text-gray-700 mb-2">Estimated Cost (R)</label>
+                        <input asp-for="EstimatedCost" type="number" step="0.01" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="0.00" />
+                        <span asp-validation-for="EstimatedCost" class="text-red-600 text-sm"></span>
+                    </div>
+
+                    <!-- Actual Cost -->
+                    <div>
+                        <label asp-for="ActualCost" class="block text-sm font-medium text-gray-700 mb-2">Actual Cost (R)</label>
+                        <input asp-for="ActualCost" type="number" step="0.01" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="0.00" />
+                        <span asp-validation-for="ActualCost" class="text-red-600 text-sm"></span>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mt-6">
+                    <label asp-for="Description" class="block text-sm font-medium text-gray-700 mb-2">Description *</label>
+                    <textarea asp-for="Description" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent" placeholder="Enter task description"></textarea>
+                    <span asp-validation-for="Description" class="text-red-600 text-sm"></span>
+                </div>
+
+                <!-- Assigned To -->
+                <div class="mt-6">
+                    <label for="AssignedToId" class="block text-sm font-medium text-gray-700 mb-2">Assigned To *</label>
+                    <select name="AssignedToId" id="AssignedToId" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                        <option value="">Select Assignee</option>
+                        @if (ViewBag.Users != null)
+                        {
+                            @foreach (var user in ViewBag.Users)
+                            {
+                                <option value="@user.Id">@user.FirstName @user.LastName (@user.Email) - @user.Role</option>
+                            }
+                        }
+                    </select>
+                    <span class="text-red-600 text-sm" id="AssignedToId-error"></span>
+                </div>
+
+                <!-- Project Phase (Optional) -->
+                <div class="mt-6">
+                    <label for="ProjectPhaseId" class="block text-sm font-medium text-gray-700 mb-2">Project Phase (Optional)</label>
+                    <select name="ProjectPhaseId" id="ProjectPhaseId" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                        <option value="">Select Project Phase</option>
+                        @if (ViewBag.ProjectPhases != null)
+                        {
+                            @foreach (var phase in ViewBag.ProjectPhases)
+                            {
+                                <option value="@phase.Id">@phase.Name - @phase.Project?.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <!-- Maintenance Request (Optional) -->
+                <div class="mt-6">
+                    <label for="MaintenanceRequestId" class="block text-sm font-medium text-gray-700 mb-2">Maintenance Request (Optional)</label>
+                    <select name="MaintenanceRequestId" id="MaintenanceRequestId" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                        <option value="">Select Maintenance Request</option>
+                        @if (ViewBag.MaintenanceRequests != null)
+                        {
+                            @foreach (var request in ViewBag.MaintenanceRequests)
+                            {
+                                <option value="@request.Id">@request.Title - @request.Client?.FirstName @request.Client?.LastName</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mt-8 flex justify-end space-x-4">
+                    <a href="/Task" class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                        Cancel
+                    </a>
+                    <button type="submit" class="px-6 py-2 bg-brand-blue text-white rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-save mr-2"></i>
+                        Create Task
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

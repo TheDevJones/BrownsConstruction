@@ -1,0 +1,1047 @@
+2025-10-20 20:49:16.290 +02:00 [INF] User profile is available. Using 'C:\Users\LIAMn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-20 20:49:16.932 +02:00 [WRN] The foreign key property 'DocumentAccess.DocumentId1' was created in shadow state because a conflicting property with the simple name 'DocumentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 20:49:17.000 +02:00 [WRN] The foreign key property 'Invoice.QuotationId1' was created in shadow state because a conflicting property with the simple name 'QuotationId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 20:49:17.354 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-20 20:49:17.365 +02:00 [INF] Database already contains users, skipping seeding
+2025-10-20 20:49:17.401 +02:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5002: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-10-20 20:57:56.274 +02:00 [INF] User profile is available. Using 'C:\Users\LIAMn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-20 20:57:56.882 +02:00 [WRN] The foreign key property 'DocumentAccess.DocumentId1' was created in shadow state because a conflicting property with the simple name 'DocumentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 20:57:56.885 +02:00 [WRN] The foreign key property 'Invoice.QuotationId1' was created in shadow state because a conflicting property with the simple name 'QuotationId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 20:57:58.177 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-20 20:57:58.193 +02:00 [INF] Database already contains users, skipping seeding
+2025-10-20 20:57:58.331 +02:00 [INF] Now listening on: https://localhost:5001
+2025-10-20 20:57:58.332 +02:00 [INF] Now listening on: http://localhost:5000
+2025-10-20 20:57:58.363 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-20 20:57:58.365 +02:00 [INF] Hosting environment: Development
+2025-10-20 20:57:58.368 +02:00 [INF] Content root path: C:\Users\LIAMn\source\repos\BCSApp\BCSApp
+2025-10-20 20:57:58.785 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - null null
+2025-10-20 20:57:58.914 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.HomeController.Index (BCSApp)'
+2025-10-20 20:57:58.920 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BCSApp.Controllers.HomeController (BCSApp).
+2025-10-20 20:57:58.929 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 20:57:58.988 +02:00 [INF] Executed ViewResult - view Index executed in 60.391ms.
+2025-10-20 20:57:58.992 +02:00 [INF] Executed action BCSApp.Controllers.HomeController.Index (BCSApp) in 71.5217ms
+2025-10-20 20:57:58.994 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.HomeController.Index (BCSApp)'
+2025-10-20 20:57:58.999 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 20:57:59.002 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - 200 null text/html; charset=utf-8 222.5955ms
+2025-10-20 20:57:59.006 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 6.858ms
+2025-10-20 20:57:59.009 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 20:57:59.040 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.8205ms
+2025-10-20 20:58:02.604 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Home/Dashboard - null null
+2025-10-20 20:58:02.617 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-20 20:58:02.625 +02:00 [INF] Route matched with {action = "Dashboard", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard() on controller BCSApp.Controllers.HomeController (BCSApp).
+2025-10-20 20:58:02.778 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 20:58:02.896 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+2025-10-20 20:58:02.908 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[Status] = N'In Progress'
+2025-10-20 20:58:02.917 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+2025-10-20 20:58:02.925 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+WHERE [m].[Status] = N'Pending'
+2025-10-20 20:58:02.932 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+2025-10-20 20:58:02.941 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[DueDate] < GETDATE() AND [t].[Status] <> N'Completed'
+2025-10-20 20:58:02.988 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ActualCost], [t].[Budget], [t].[ClientId], [t].[CreatedAt], [t].[Description], [t].[EndDate], [t].[Location], [t].[Name], [t].[ProjectManagerId], [t].[StartDate], [t].[Status], [t].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+    FROM [Projects] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[ProjectManagerId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[ClientId] = [a0].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-10-20 20:58:03.012 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ActualCost], [t].[AssignedToId], [t].[ClientId], [t].[CompletedAt], [t].[CreatedAt], [t].[Description], [t].[DueDate], [t].[EstimatedCost], [t].[Location], [t].[Priority], [t].[ProjectId], [t].[PropertyType], [t].[Status], [t].[Title], [t].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt]
+    FROM [MaintenanceRequests] AS [m]
+    ORDER BY [m].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[ClientId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [t].[AssignedToId] = [a0].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-10-20 20:58:03.034 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[ActualCost], [t0].[AssignedToId], [t0].[CompletedAt], [t0].[CreatedAt], [t0].[CreatedById], [t0].[Description], [t0].[DueDate], [t0].[EstimatedCost], [t0].[MaintenanceRequestId], [t0].[Priority], [t0].[ProjectPhaseId], [t0].[Status], [t0].[Title], [t0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [t].[Id], [t].[ActualCost], [t].[AssignedToId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedById], [t].[Description], [t].[DueDate], [t].[EstimatedCost], [t].[MaintenanceRequestId], [t].[Priority], [t].[ProjectPhaseId], [t].[Status], [t].[Title], [t].[UpdatedAt]
+    FROM [Tasks] AS [t]
+    ORDER BY [t].[CreatedAt] DESC
+) AS [t0]
+INNER JOIN [AspNetUsers] AS [a] ON [t0].[AssignedToId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [t0].[CreatedById] = [a0].[Id]
+ORDER BY [t0].[CreatedAt] DESC
+2025-10-20 20:58:03.054 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Status], COUNT(*) AS [Count]
+FROM [Projects] AS [p]
+GROUP BY [p].[Status]
+2025-10-20 20:58:03.063 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Priority], COUNT(*) AS [Count]
+FROM [MaintenanceRequests] AS [m]
+GROUP BY [m].[Priority]
+2025-10-20 20:58:03.071 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Status], COUNT(*) AS [Count]
+FROM [Tasks] AS [t]
+GROUP BY [t].[Status]
+2025-10-20 20:58:03.077 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+FROM [Projects] AS [p]
+2025-10-20 20:58:03.080 +02:00 [INF] Executing ViewResult, running view Dashboard.
+2025-10-20 20:58:03.125 +02:00 [INF] Executed ViewResult - view Dashboard executed in 45.4852ms.
+2025-10-20 20:58:03.128 +02:00 [INF] Executed action BCSApp.Controllers.HomeController.Dashboard (BCSApp) in 500.3544ms
+2025-10-20 20:58:03.129 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-20 20:58:03.133 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Home/Dashboard - 200 null text/html; charset=utf-8 529.3896ms
+2025-10-20 20:58:03.137 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 20:58:03.137 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 20:58:03.140 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.1022ms
+2025-10-20 20:58:03.155 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.8876ms
+2025-10-20 20:58:15.481 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project - null null
+2025-10-20 20:58:15.499 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 20:58:15.502 +02:00 [INF] Route matched with {action = "Index", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 20:58:15.552 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 20:58:15.581 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Name], [p0].[Order], [p0].[ProjectId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[ProjectManagerId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [p].[ClientId] = [a0].[Id]
+LEFT JOIN [ProjectPhases] AS [p0] ON [p].[Id] = [p0].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [a0].[Id]
+2025-10-20 20:58:15.587 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 20:58:15.593 +02:00 [INF] Executed ViewResult - view Index executed in 6.7518ms.
+2025-10-20 20:58:15.594 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Index (BCSApp) in 90.9281ms
+2025-10-20 20:58:15.595 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 20:58:15.596 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project - 200 null text/html; charset=utf-8 114.4902ms
+2025-10-20 20:58:15.606 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 20:58:15.606 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 20:58:15.608 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.1699ms
+2025-10-20 20:58:15.617 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.886ms
+2025-10-20 20:58:17.696 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project/Create - null null
+2025-10-20 20:58:17.701 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 20:58:17.706 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 20:58:17.730 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 20:58:17.751 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 20:58:17.755 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 20:58:17.759 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 20:58:17.780 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 20:58:17.783 +02:00 [ERR] The view 'Create' was not found. Searched locations: ["/Views/Project/Create.cshtml","/Views/Shared/Create.cshtml","/Pages/Shared/Create.cshtml"]
+2025-10-20 20:58:17.789 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 81.4231ms
+2025-10-20 20:58:17.790 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 20:58:17.793 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Create' was not found. The following locations were searched:
+/Views/Project/Create.cshtml
+/Views/Shared/Create.cshtml
+/Pages/Shared/Create.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-10-20 20:58:17.821 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project/Create - 500 null text/html; charset=utf-8 125.1198ms
+2025-10-20 20:58:17.833 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 20:58:17.833 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 20:58:17.840 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 7.547ms
+2025-10-20 20:58:17.846 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.7692ms
+2025-10-20 20:58:36.233 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project - null null
+2025-10-20 20:58:36.239 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 20:58:36.241 +02:00 [INF] Route matched with {action = "Index", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 20:58:36.245 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 20:58:36.248 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Name], [p0].[Order], [p0].[ProjectId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[ProjectManagerId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [p].[ClientId] = [a0].[Id]
+LEFT JOIN [ProjectPhases] AS [p0] ON [p].[Id] = [p0].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [a0].[Id]
+2025-10-20 20:58:36.249 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 20:58:36.251 +02:00 [INF] Executed ViewResult - view Index executed in 2.3669ms.
+2025-10-20 20:58:36.252 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Index (BCSApp) in 9.0523ms
+2025-10-20 20:58:36.253 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 20:58:36.254 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project - 200 null text/html; charset=utf-8 21.3203ms
+2025-10-20 20:58:36.263 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 20:58:36.265 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.0933ms
+2025-10-20 20:58:56.218 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project/Create - null null
+2025-10-20 20:58:56.225 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 20:58:56.226 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 20:58:56.228 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 20:58:56.231 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 20:58:56.233 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 20:58:56.235 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 20:58:56.236 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 20:58:56.237 +02:00 [ERR] The view 'Create' was not found. Searched locations: ["/Views/Project/Create.cshtml","/Views/Shared/Create.cshtml","/Pages/Shared/Create.cshtml"]
+2025-10-20 20:58:56.240 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 13.675ms
+2025-10-20 20:58:56.242 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 20:58:56.243 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Create' was not found. The following locations were searched:
+/Views/Project/Create.cshtml
+/Views/Shared/Create.cshtml
+/Pages/Shared/Create.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-10-20 20:58:56.249 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project/Create - 500 null text/html; charset=utf-8 31.6034ms
+2025-10-20 20:58:56.262 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 20:58:56.262 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 20:58:56.264 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.2253ms
+2025-10-20 20:58:56.272 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.3029ms
+2025-10-20 21:05:45.647 +02:00 [INF] User profile is available. Using 'C:\Users\LIAMn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-20 21:05:46.272 +02:00 [WRN] The foreign key property 'DocumentAccess.DocumentId1' was created in shadow state because a conflicting property with the simple name 'DocumentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 21:05:46.274 +02:00 [WRN] The foreign key property 'Invoice.QuotationId1' was created in shadow state because a conflicting property with the simple name 'QuotationId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 21:05:47.349 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-20 21:05:47.365 +02:00 [INF] Database already contains users, skipping seeding
+2025-10-20 21:05:47.493 +02:00 [INF] Now listening on: https://localhost:5001
+2025-10-20 21:05:47.497 +02:00 [INF] Now listening on: http://localhost:5000
+2025-10-20 21:05:47.524 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-20 21:05:47.526 +02:00 [INF] Hosting environment: Development
+2025-10-20 21:05:47.528 +02:00 [INF] Content root path: C:\Users\LIAMn\source\repos\BCSApp\BCSApp
+2025-10-20 21:05:48.665 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - null null
+2025-10-20 21:05:48.896 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 21:05:49.009 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-10-20 21:05:49.042 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-10-20 21:05:49.054 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-20 21:05:49.069 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:05:49.081 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.HomeController.Index (BCSApp)'
+2025-10-20 21:05:49.089 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BCSApp.Controllers.HomeController (BCSApp).
+2025-10-20 21:05:49.098 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 21:05:49.164 +02:00 [INF] Executed ViewResult - view Index executed in 66.7741ms.
+2025-10-20 21:05:49.169 +02:00 [INF] Executed action BCSApp.Controllers.HomeController.Index (BCSApp) in 77.4906ms
+2025-10-20 21:05:49.172 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.HomeController.Index (BCSApp)'
+2025-10-20 21:05:49.173 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:05:49.184 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 10.7444ms
+2025-10-20 21:05:49.185 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - 200 null text/html; charset=utf-8 527.2155ms
+2025-10-20 21:05:49.187 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:05:49.220 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.1434ms
+2025-10-20 21:05:51.642 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project - null null
+2025-10-20 21:05:51.655 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 21:05:51.659 +02:00 [INF] Route matched with {action = "Index", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:05:51.703 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 21:05:51.755 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Name], [p0].[Order], [p0].[ProjectId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[ProjectManagerId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [p].[ClientId] = [a0].[Id]
+LEFT JOIN [ProjectPhases] AS [p0] ON [p].[Id] = [p0].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [a0].[Id]
+2025-10-20 21:05:51.763 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 21:05:51.770 +02:00 [INF] Executed ViewResult - view Index executed in 8.4392ms.
+2025-10-20 21:05:51.772 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Index (BCSApp) in 110.2622ms
+2025-10-20 21:05:51.773 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 21:05:51.775 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project - 200 null text/html; charset=utf-8 132.8395ms
+2025-10-20 21:05:51.783 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:05:51.784 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:05:51.790 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 6.4226ms
+2025-10-20 21:05:51.802 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.793ms
+2025-10-20 21:05:52.906 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project/Create - null null
+2025-10-20 21:05:52.923 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:05:52.928 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:05:52.943 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:05:52.952 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:05:52.955 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:05:52.957 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:05:52.981 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:05:53.041 +02:00 [INF] Executed ViewResult - view Create executed in 60.6243ms.
+2025-10-20 21:05:53.043 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 114.2262ms
+2025-10-20 21:05:53.045 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:05:53.047 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 141.0371ms
+2025-10-20 21:05:53.052 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2025-10-20 21:05:53.053 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:05:53.053 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:05:53.053 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2025-10-20 21:05:53.065 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 12.0045ms
+2025-10-20 21:05:53.074 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.2356ms
+2025-10-20 21:05:53.088 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\LIAMn\source\repos\BCSApp\BCSApp\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2025-10-20 21:05:53.088 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'C:\Users\LIAMn\source\repos\BCSApp\BCSApp\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2025-10-20 21:05:53.089 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5824 text/javascript 36.6344ms
+2025-10-20 21:05:53.090 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/lib/jquery-validation/dist/jquery.validate.min.js - 200 24601 text/javascript 37.9331ms
+2025-10-20 21:05:56.708 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 379
+2025-10-20 21:05:56.715 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:05:56.734 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:05:56.757 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:05:56.761 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:05:56.763 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:05:56.765 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:05:56.767 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:05:56.773 +02:00 [INF] Executed ViewResult - view Create executed in 6.9651ms.
+2025-10-20 21:05:56.774 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 37.2343ms
+2025-10-20 21:05:56.775 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:05:56.777 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 69.3936ms
+2025-10-20 21:05:56.782 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:05:56.785 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:05:56.791 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 6.5909ms
+2025-10-20 21:05:56.799 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.6347ms
+2025-10-20 21:06:52.671 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 456
+2025-10-20 21:06:52.712 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:06:52.714 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:06:52.725 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:06:52.728 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:06:52.731 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:06:52.733 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:06:52.734 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:06:52.737 +02:00 [INF] Executed ViewResult - view Create executed in 3.4836ms.
+2025-10-20 21:06:52.743 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 27.9527ms
+2025-10-20 21:06:52.744 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:06:52.745 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 74.2388ms
+2025-10-20 21:06:52.748 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:06:52.750 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:06:52.754 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 4.6667ms
+2025-10-20 21:06:52.765 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.5164ms
+2025-10-20 21:06:57.224 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 458
+2025-10-20 21:06:57.231 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:06:57.231 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:06:57.234 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:06:57.236 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:06:57.238 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:06:57.239 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:06:57.240 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:06:57.243 +02:00 [INF] Executed ViewResult - view Create executed in 2.7841ms.
+2025-10-20 21:06:57.244 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 11.8467ms
+2025-10-20 21:06:57.245 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:06:57.246 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 21.8208ms
+2025-10-20 21:06:57.254 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:06:57.254 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:06:57.256 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.3094ms
+2025-10-20 21:06:57.265 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.8333ms
+2025-10-20 21:06:59.092 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project - null null
+2025-10-20 21:06:59.098 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 21:06:59.099 +02:00 [INF] Route matched with {action = "Index", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:06:59.103 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 21:06:59.105 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Name], [p0].[Order], [p0].[ProjectId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[ProjectManagerId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [p].[ClientId] = [a0].[Id]
+LEFT JOIN [ProjectPhases] AS [p0] ON [p].[Id] = [p0].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [a0].[Id]
+2025-10-20 21:06:59.107 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 21:06:59.109 +02:00 [INF] Executed ViewResult - view Index executed in 2.1646ms.
+2025-10-20 21:06:59.110 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Index (BCSApp) in 9.4124ms
+2025-10-20 21:06:59.111 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 21:06:59.112 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project - 200 null text/html; charset=utf-8 20.3883ms
+2025-10-20 21:06:59.119 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:06:59.119 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:06:59.121 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.102ms
+2025-10-20 21:06:59.150 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.1451ms
+2025-10-20 21:07:01.294 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project/Create - null null
+2025-10-20 21:07:01.300 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:07:01.301 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:07:01.303 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:07:01.306 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:07:01.308 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:07:01.310 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:07:01.311 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:07:01.315 +02:00 [INF] Executed ViewResult - view Create executed in 3.3644ms.
+2025-10-20 21:07:01.315 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 13.9298ms
+2025-10-20 21:07:01.316 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:07:01.317 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 22.9955ms
+2025-10-20 21:07:01.325 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:07:01.325 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:07:01.327 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.7901ms
+2025-10-20 21:07:01.335 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.3834ms
+2025-10-20 21:07:16.835 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 436
+2025-10-20 21:07:16.841 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:07:16.841 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:07:16.846 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:07:16.848 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:07:16.849 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:07:16.851 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:07:16.852 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:07:16.855 +02:00 [INF] Executed ViewResult - view Create executed in 2.4783ms.
+2025-10-20 21:07:16.855 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 12.7406ms
+2025-10-20 21:07:16.856 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:07:16.857 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 22.779ms
+2025-10-20 21:07:16.865 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:07:16.865 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:07:16.870 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 4.6808ms
+2025-10-20 21:07:16.878 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.1587ms
+2025-10-20 21:07:18.426 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 436
+2025-10-20 21:07:18.431 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:07:18.432 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:07:18.435 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:07:18.438 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:07:18.440 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:07:18.441 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:07:18.443 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:07:18.447 +02:00 [INF] Executed ViewResult - view Create executed in 3.6438ms.
+2025-10-20 21:07:18.448 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 15.1354ms
+2025-10-20 21:07:18.448 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:07:18.449 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 24.1058ms
+2025-10-20 21:07:18.456 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:07:18.456 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:07:18.459 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.6982ms
+2025-10-20 21:07:18.468 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.5316ms
+2025-10-20 21:07:55.581 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 436
+2025-10-20 21:07:55.592 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:07:55.594 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:07:55.599 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:07:55.601 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:07:55.603 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:07:55.604 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:07:55.605 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:07:55.609 +02:00 [INF] Executed ViewResult - view Create executed in 3.325ms.
+2025-10-20 21:07:55.616 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 20.509ms
+2025-10-20 21:07:55.617 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:07:55.617 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 36.8407ms
+2025-10-20 21:07:55.620 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:07:55.620 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:07:55.632 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 11.3362ms
+2025-10-20 21:07:55.635 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.1804ms
+2025-10-20 21:08:09.298 +02:00 [INF] User profile is available. Using 'C:\Users\LIAMn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-20 21:08:09.871 +02:00 [WRN] The foreign key property 'DocumentAccess.DocumentId1' was created in shadow state because a conflicting property with the simple name 'DocumentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 21:08:09.871 +02:00 [WRN] The foreign key property 'Invoice.QuotationId1' was created in shadow state because a conflicting property with the simple name 'QuotationId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 21:08:10.599 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-20 21:08:10.612 +02:00 [INF] Database already contains users, skipping seeding
+2025-10-20 21:08:10.647 +02:00 [INF] Now listening on: http://localhost:5002
+2025-10-20 21:08:10.648 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-20 21:08:10.649 +02:00 [INF] Hosting environment: Development
+2025-10-20 21:08:10.649 +02:00 [INF] Content root path: C:\Users\LIAMn\source\repos\BCSApp\BCSApp
+2025-10-20 21:17:43.811 +02:00 [INF] User profile is available. Using 'C:\Users\LIAMn\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-20 21:17:44.448 +02:00 [WRN] The foreign key property 'DocumentAccess.DocumentId1' was created in shadow state because a conflicting property with the simple name 'DocumentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 21:17:44.451 +02:00 [WRN] The foreign key property 'Invoice.QuotationId1' was created in shadow state because a conflicting property with the simple name 'QuotationId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-10-20 21:17:46.195 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-20 21:17:46.213 +02:00 [INF] Database already contains users, skipping seeding
+2025-10-20 21:17:46.413 +02:00 [INF] Now listening on: https://localhost:5001
+2025-10-20 21:17:46.415 +02:00 [INF] Now listening on: http://localhost:5000
+2025-10-20 21:17:46.441 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-20 21:17:46.442 +02:00 [INF] Hosting environment: Development
+2025-10-20 21:17:46.443 +02:00 [INF] Content root path: C:\Users\LIAMn\source\repos\BCSApp\BCSApp
+2025-10-20 21:17:46.934 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - null null
+2025-10-20 21:17:47.050 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.HomeController.Index (BCSApp)'
+2025-10-20 21:17:47.056 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BCSApp.Controllers.HomeController (BCSApp).
+2025-10-20 21:17:47.064 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 21:17:47.122 +02:00 [INF] Executed ViewResult - view Index executed in 59.1614ms.
+2025-10-20 21:17:47.128 +02:00 [INF] Executed action BCSApp.Controllers.HomeController.Index (BCSApp) in 69.8946ms
+2025-10-20 21:17:47.130 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.HomeController.Index (BCSApp)'
+2025-10-20 21:17:47.132 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:17:47.138 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - 200 null text/html; charset=utf-8 207.2276ms
+2025-10-20 21:17:47.139 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 7.1551ms
+2025-10-20 21:17:47.141 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:17:47.175 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.1491ms
+2025-10-20 21:17:50.303 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project - null null
+2025-10-20 21:17:50.315 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 21:17:50.320 +02:00 [INF] Route matched with {action = "Index", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:17:50.429 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 21:17:50.575 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Name], [p0].[Order], [p0].[ProjectId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[ProjectManagerId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [p].[ClientId] = [a0].[Id]
+LEFT JOIN [ProjectPhases] AS [p0] ON [p].[Id] = [p0].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [a0].[Id]
+2025-10-20 21:17:50.580 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 21:17:50.588 +02:00 [INF] Executed ViewResult - view Index executed in 8.9219ms.
+2025-10-20 21:17:50.589 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Index (BCSApp) in 267.3291ms
+2025-10-20 21:17:50.590 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 21:17:50.595 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project - 200 null text/html; charset=utf-8 292.2587ms
+2025-10-20 21:17:50.602 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:17:50.602 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:17:50.605 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.6194ms
+2025-10-20 21:17:50.624 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.1313ms
+2025-10-20 21:17:51.848 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project/Create - null null
+2025-10-20 21:17:51.864 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:17:51.868 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:17:51.925 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:17:51.946 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:17:51.951 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:17:51.953 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:17:51.976 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:17:52.050 +02:00 [INF] Executed ViewResult - view Create executed in 74.004ms.
+2025-10-20 21:17:52.051 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 180.896ms
+2025-10-20 21:17:52.052 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:17:52.053 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 204.6083ms
+2025-10-20 21:17:52.107 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:17:52.107 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:17:52.110 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.4217ms
+2025-10-20 21:17:52.119 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.5219ms
+2025-10-20 21:18:16.835 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 444
+2025-10-20 21:18:16.846 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:16.866 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:18:16.892 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:16.897 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:16.900 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:16.902 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:16.903 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:18:16.915 +02:00 [INF] Executed ViewResult - view Create executed in 11.5175ms.
+2025-10-20 21:18:16.917 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 48.8026ms
+2025-10-20 21:18:16.917 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:16.918 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 83.3355ms
+2025-10-20 21:18:16.972 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:18:16.972 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:18:16.978 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 6.1946ms
+2025-10-20 21:18:16.988 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.2312ms
+2025-10-20 21:18:21.433 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 444
+2025-10-20 21:18:21.439 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:21.440 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:18:21.446 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:21.448 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:21.450 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:21.452 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:21.453 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:18:21.456 +02:00 [INF] Executed ViewResult - view Create executed in 3.2876ms.
+2025-10-20 21:18:21.457 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 14.7981ms
+2025-10-20 21:18:21.458 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:21.460 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 28.1358ms
+2025-10-20 21:18:21.466 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:18:21.466 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:18:21.469 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.6671ms
+2025-10-20 21:18:21.477 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.296ms
+2025-10-20 21:18:22.864 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 444
+2025-10-20 21:18:22.869 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:22.870 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:18:22.873 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:22.875 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:22.877 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:22.879 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:22.880 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:18:22.884 +02:00 [INF] Executed ViewResult - view Create executed in 3.3146ms.
+2025-10-20 21:18:22.885 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 14.309ms
+2025-10-20 21:18:22.886 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:22.887 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 23.2383ms
+2025-10-20 21:18:22.894 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:18:22.894 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:18:22.896 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.3778ms
+2025-10-20 21:18:22.904 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.9539ms
+2025-10-20 21:18:31.159 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 444
+2025-10-20 21:18:31.165 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:31.167 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:18:31.170 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:31.173 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:31.174 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:31.177 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:31.178 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:18:31.181 +02:00 [INF] Executed ViewResult - view Create executed in 2.5846ms.
+2025-10-20 21:18:31.181 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 13.2849ms
+2025-10-20 21:18:31.182 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:31.183 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 24.1994ms
+2025-10-20 21:18:31.190 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:18:31.190 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:18:31.192 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.6513ms
+2025-10-20 21:18:31.202 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.6275ms
+2025-10-20 21:18:32.635 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5001/Project/Create - application/x-www-form-urlencoded 444
+2025-10-20 21:18:32.641 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:32.641 +02:00 [INF] Route matched with {action = "Create", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BCSApp.Models.Project) on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:18:32.646 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:32.648 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:32.650 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-10-20 21:18:32.652 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-20 21:18:32.653 +02:00 [INF] Executing ViewResult, running view Create.
+2025-10-20 21:18:32.656 +02:00 [INF] Executed ViewResult - view Create executed in 2.8853ms.
+2025-10-20 21:18:32.657 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Create (BCSApp) in 13.7039ms
+2025-10-20 21:18:32.657 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Create (BCSApp)'
+2025-10-20 21:18:32.659 +02:00 [INF] Request finished HTTP/2 POST https://localhost:5001/Project/Create - 200 null text/html; charset=utf-8 23.9161ms
+2025-10-20 21:18:32.667 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:18:32.666 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:18:32.669 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.2635ms
+2025-10-20 21:18:32.677 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.9302ms
+2025-10-20 21:18:33.968 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Project - null null
+2025-10-20 21:18:33.974 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 21:18:33.975 +02:00 [INF] Route matched with {action = "Index", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.ProjectController (BCSApp).
+2025-10-20 21:18:33.980 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 21:18:33.983 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p0].[Id], [p0].[ActualCost], [p0].[Budget], [p0].[CreatedAt], [p0].[Description], [p0].[EndDate], [p0].[Name], [p0].[Order], [p0].[ProjectId], [p0].[StartDate], [p0].[Status], [p0].[UpdatedAt]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[ProjectManagerId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [p].[ClientId] = [a0].[Id]
+LEFT JOIN [ProjectPhases] AS [p0] ON [p].[Id] = [p0].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [a0].[Id]
+2025-10-20 21:18:33.984 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 21:18:33.986 +02:00 [INF] Executed ViewResult - view Index executed in 2.4424ms.
+2025-10-20 21:18:33.987 +02:00 [INF] Executed action BCSApp.Controllers.ProjectController.Index (BCSApp) in 10.3853ms
+2025-10-20 21:18:33.988 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.ProjectController.Index (BCSApp)'
+2025-10-20 21:18:33.989 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Project - 200 null text/html; charset=utf-8 20.7084ms
+2025-10-20 21:18:33.997 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:18:33.998 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:18:34.001 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.7599ms
+2025-10-20 21:18:34.010 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.9116ms
+2025-10-20 21:18:36.159 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Maintenance - null null
+2025-10-20 21:18:36.164 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.MaintenanceController.Index (BCSApp)'
+2025-10-20 21:18:36.166 +02:00 [INF] Route matched with {action = "Index", controller = "Maintenance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.MaintenanceController (BCSApp).
+2025-10-20 21:18:36.171 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 21:18:36.331 +02:00 [INF] Executed DbCommand (137ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [d].[Id], [d].[CreatedAt], [d].[Description], [d].[DocumentType], [d].[FileName], [d].[FilePath], [d].[FileSize], [d].[FileType], [d].[MaintenanceRequestId], [d].[Name], [d].[ProjectId], [d].[TaskId], [d].[UploadedById]
+FROM [MaintenanceRequests] AS [m]
+INNER JOIN [AspNetUsers] AS [a] ON [m].[ClientId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [m].[AssignedToId] = [a0].[Id]
+LEFT JOIN [Projects] AS [p] ON [m].[ProjectId] = [p].[Id]
+LEFT JOIN [Documents] AS [d] ON [m].[Id] = [d].[MaintenanceRequestId]
+ORDER BY [m].[CreatedAt] DESC, [m].[Id], [a].[Id], [a0].[Id], [p].[Id]
+2025-10-20 21:18:36.335 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 21:18:36.339 +02:00 [INF] Executed ViewResult - view Index executed in 4.5537ms.
+2025-10-20 21:18:36.341 +02:00 [INF] Executed action BCSApp.Controllers.MaintenanceController.Index (BCSApp) in 172.2179ms
+2025-10-20 21:18:36.343 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.MaintenanceController.Index (BCSApp)'
+2025-10-20 21:18:36.344 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Maintenance - 200 null text/html; charset=utf-8 185.4927ms
+2025-10-20 21:18:36.351 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:18:36.351 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:18:36.355 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 4.7816ms
+2025-10-20 21:18:36.360 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.478ms
+2025-10-20 21:18:37.400 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Maintenance/Create - null null
+2025-10-20 21:18:37.406 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Client)
+2025-10-20 21:18:37.408 +02:00 [INF] AuthenticationScheme: Identity.Application was forbidden.
+2025-10-20 21:18:37.409 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Maintenance/Create - 302 0 null 9.5195ms
+2025-10-20 21:18:37.412 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Account/AccessDenied?ReturnUrl=%2FMaintenance%2FCreate - null null
+2025-10-20 21:18:37.416 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Account/AccessDenied?ReturnUrl=%2FMaintenance%2FCreate - 404 0 null 3.4424ms
+2025-10-20 21:18:37.418 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:5001/Account/AccessDenied, Response status code: 404
+2025-10-20 21:18:41.611 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Maintenance - null null
+2025-10-20 21:18:41.618 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.MaintenanceController.Index (BCSApp)'
+2025-10-20 21:18:41.621 +02:00 [INF] Route matched with {action = "Index", controller = "Maintenance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BCSApp.Controllers.MaintenanceController (BCSApp).
+2025-10-20 21:18:41.624 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 21:18:41.629 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName], [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt], [d].[Id], [d].[CreatedAt], [d].[Description], [d].[DocumentType], [d].[FileName], [d].[FilePath], [d].[FileSize], [d].[FileType], [d].[MaintenanceRequestId], [d].[Name], [d].[ProjectId], [d].[TaskId], [d].[UploadedById]
+FROM [MaintenanceRequests] AS [m]
+INNER JOIN [AspNetUsers] AS [a] ON [m].[ClientId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [m].[AssignedToId] = [a0].[Id]
+LEFT JOIN [Projects] AS [p] ON [m].[ProjectId] = [p].[Id]
+LEFT JOIN [Documents] AS [d] ON [m].[Id] = [d].[MaintenanceRequestId]
+ORDER BY [m].[CreatedAt] DESC, [m].[Id], [a].[Id], [a0].[Id], [p].[Id]
+2025-10-20 21:18:41.631 +02:00 [INF] Executing ViewResult, running view Index.
+2025-10-20 21:18:41.635 +02:00 [INF] Executed ViewResult - view Index executed in 3.1698ms.
+2025-10-20 21:18:41.635 +02:00 [INF] Executed action BCSApp.Controllers.MaintenanceController.Index (BCSApp) in 13.314ms
+2025-10-20 21:18:41.637 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.MaintenanceController.Index (BCSApp)'
+2025-10-20 21:18:41.638 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Maintenance - 200 null text/html; charset=utf-8 26.7681ms
+2025-10-20 21:18:41.650 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:18:41.652 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.8871ms
+2025-10-20 21:18:42.800 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/Home/Dashboard - null null
+2025-10-20 21:18:42.807 +02:00 [INF] Executing endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-20 21:18:42.810 +02:00 [INF] Route matched with {action = "Dashboard", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard() on controller BCSApp.Controllers.HomeController (BCSApp).
+2025-10-20 21:18:42.815 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-10-20 21:18:42.851 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+2025-10-20 21:18:42.860 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+WHERE [p].[Status] = N'In Progress'
+2025-10-20 21:18:42.866 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+2025-10-20 21:18:42.872 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [MaintenanceRequests] AS [m]
+WHERE [m].[Status] = N'Pending'
+2025-10-20 21:18:42.878 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+2025-10-20 21:18:42.887 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tasks] AS [t]
+WHERE [t].[DueDate] < GETDATE() AND [t].[Status] <> N'Completed'
+2025-10-20 21:18:42.905 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ActualCost], [t].[Budget], [t].[ClientId], [t].[CreatedAt], [t].[Description], [t].[EndDate], [t].[Location], [t].[Name], [t].[ProjectManagerId], [t].[StartDate], [t].[Status], [t].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+    FROM [Projects] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[ProjectManagerId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [t].[ClientId] = [a0].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-10-20 21:18:42.918 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ActualCost], [t].[AssignedToId], [t].[ClientId], [t].[CompletedAt], [t].[CreatedAt], [t].[Description], [t].[DueDate], [t].[EstimatedCost], [t].[Location], [t].[Priority], [t].[ProjectId], [t].[PropertyType], [t].[Status], [t].[Title], [t].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [m].[Id], [m].[ActualCost], [m].[AssignedToId], [m].[ClientId], [m].[CompletedAt], [m].[CreatedAt], [m].[Description], [m].[DueDate], [m].[EstimatedCost], [m].[Location], [m].[Priority], [m].[ProjectId], [m].[PropertyType], [m].[Status], [m].[Title], [m].[UpdatedAt]
+    FROM [MaintenanceRequests] AS [m]
+    ORDER BY [m].[CreatedAt] DESC
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[ClientId] = [a].[Id]
+LEFT JOIN [AspNetUsers] AS [a0] ON [t].[AssignedToId] = [a0].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-10-20 21:18:42.931 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[ActualCost], [t0].[AssignedToId], [t0].[CompletedAt], [t0].[CreatedAt], [t0].[CreatedById], [t0].[Description], [t0].[DueDate], [t0].[EstimatedCost], [t0].[MaintenanceRequestId], [t0].[Priority], [t0].[ProjectPhaseId], [t0].[Status], [t0].[Title], [t0].[UpdatedAt], [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[Company], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[Phone], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName], [a0].[Id], [a0].[AccessFailedCount], [a0].[Address], [a0].[Company], [a0].[ConcurrencyStamp], [a0].[CreatedAt], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[IsActive], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[Phone], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[Role], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UpdatedAt], [a0].[UserName]
+FROM (
+    SELECT TOP(@__p_0) [t].[Id], [t].[ActualCost], [t].[AssignedToId], [t].[CompletedAt], [t].[CreatedAt], [t].[CreatedById], [t].[Description], [t].[DueDate], [t].[EstimatedCost], [t].[MaintenanceRequestId], [t].[Priority], [t].[ProjectPhaseId], [t].[Status], [t].[Title], [t].[UpdatedAt]
+    FROM [Tasks] AS [t]
+    ORDER BY [t].[CreatedAt] DESC
+) AS [t0]
+INNER JOIN [AspNetUsers] AS [a] ON [t0].[AssignedToId] = [a].[Id]
+INNER JOIN [AspNetUsers] AS [a0] ON [t0].[CreatedById] = [a0].[Id]
+ORDER BY [t0].[CreatedAt] DESC
+2025-10-20 21:18:42.949 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Status], COUNT(*) AS [Count]
+FROM [Projects] AS [p]
+GROUP BY [p].[Status]
+2025-10-20 21:18:42.955 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Priority], COUNT(*) AS [Count]
+FROM [MaintenanceRequests] AS [m]
+GROUP BY [m].[Priority]
+2025-10-20 21:18:42.960 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Status], COUNT(*) AS [Count]
+FROM [Tasks] AS [t]
+GROUP BY [t].[Status]
+2025-10-20 21:18:42.966 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ActualCost], [p].[Budget], [p].[ClientId], [p].[CreatedAt], [p].[Description], [p].[EndDate], [p].[Location], [p].[Name], [p].[ProjectManagerId], [p].[StartDate], [p].[Status], [p].[UpdatedAt]
+FROM [Projects] AS [p]
+2025-10-20 21:18:42.968 +02:00 [INF] Executing ViewResult, running view Dashboard.
+2025-10-20 21:18:43.004 +02:00 [INF] Executed ViewResult - view Dashboard executed in 36.2908ms.
+2025-10-20 21:18:43.006 +02:00 [INF] Executed action BCSApp.Controllers.HomeController.Dashboard (BCSApp) in 194.0079ms
+2025-10-20 21:18:43.007 +02:00 [INF] Executed endpoint 'BCSApp.Controllers.HomeController.Dashboard (BCSApp)'
+2025-10-20 21:18:43.010 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/Home/Dashboard - 200 null text/html; charset=utf-8 209.4593ms
+2025-10-20 21:18:43.016 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-20 21:18:43.016 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-10-20 21:18:43.018 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.8738ms
+2025-10-20 21:18:43.026 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.8527ms

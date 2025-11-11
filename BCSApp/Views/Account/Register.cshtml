@@ -1,0 +1,122 @@
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+        <div>
+            <div class="mx-auto h-12 w-12 bg-gradient-to-r from-brand-orange to-brand-purple rounded-lg flex items-center justify-center">
+                <i class="fas fa-user-plus text-white text-xl"></i>
+            </div>
+            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                Create your account
+            </h2>
+            <p class="mt-2 text-center text-sm text-gray-600">
+                Join Dr Majoko Projects Management System
+            </p>
+        </div>
+        <form class="mt-8 space-y-6" asp-action="Register" method="post">
+            <div class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label asp-for="FirstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                        <input asp-for="FirstName" type="text" required 
+                               class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm" 
+                               placeholder="First name" />
+                        <span asp-validation-for="FirstName" class="text-red-500 text-sm"></span>
+                    </div>
+                    <div>
+                        <label asp-for="LastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                        <input asp-for="LastName" type="text" required 
+                               class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm" 
+                               placeholder="Last name" />
+                        <span asp-validation-for="LastName" class="text-red-500 text-sm"></span>
+                    </div>
+                </div>
+
+                <div>
+                    <label asp-for="Email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input asp-for="Email" type="email" autocomplete="email" required 
+                           class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm" 
+                           placeholder="Email address" />
+                    <span asp-validation-for="Email" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div>
+                    <label asp-for="PhoneNumber" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <input asp-for="PhoneNumber" type="tel" 
+                           class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm" 
+                           placeholder="Phone number" />
+                    <span asp-validation-for="PhoneNumber" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Company" class="block text-sm font-medium text-gray-700">Company</label>
+                    <input asp-for="Company" type="text" 
+                           class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm" 
+                           placeholder="Company name" />
+                    <span asp-validation-for="Company" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Role" class="block text-sm font-medium text-gray-700">Role</label>
+                    <select asp-for="Role" 
+                            class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 text-gray-900 rounded-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm">
+                        <option value="Client">Client</option>
+                        <option value="Contractor">Contractor</option>
+                        <option value="ProjectManager">Project Manager</option>
+                    </select>
+                    <span asp-validation-for="Role" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Address" class="block text-sm font-medium text-gray-700">Address</label>
+                    <textarea asp-for="Address" rows="3" 
+                              class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm" 
+                              placeholder="Address"></textarea>
+                    <span asp-validation-for="Address" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div>
+                    <label asp-for="Password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input asp-for="Password" type="password" autocomplete="new-password" required 
+                           class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm" 
+                           placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div>
+                    <label asp-for="ConfirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    <input asp-for="ConfirmPassword" type="password" autocomplete="new-password" required 
+                           class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm" 
+                           placeholder="Confirm password" />
+                    <span asp-validation-for="ConfirmPassword" class="text-red-500 text-sm"></span>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" 
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-brand-orange to-brand-purple hover:from-orange-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange transition-all duration-200">
+                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                        <i class="fas fa-user-plus text-white text-sm"></i>
+                    </span>
+                    Create Account
+                </button>
+            </div>
+
+            <div class="text-center">
+                <p class="text-sm text-gray-600">
+                    Already have an account?
+                    <a asp-action="Login" class="font-medium text-brand-blue hover:text-brand-orange">
+                        Sign in here
+                    </a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

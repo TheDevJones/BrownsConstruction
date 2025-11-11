@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="text-2xl font-bold text-gray-900 mb-4">Create Maintenance Request</h2>
+<form method="post" class="bg-white rounded-lg shadow p-6 max-w-2xl">
+    <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+        <textarea name="description" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-orange" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+        <i class="fas fa-paper-plane mr-2"></i>Submit
+    </button>
+</form>

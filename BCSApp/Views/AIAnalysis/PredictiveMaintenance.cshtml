@@ -1,0 +1,277 @@
+﻿@{
+    ViewData["Title"] = "AI Predictive Maintenance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="min-h-screen bg-gray-50 py-6">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">
+                        <i class="fas fa-tools text-green-600 mr-3"></i>
+                        AI Predictive Maintenance
+                    </h1>
+                    <p class="mt-2 text-gray-600">Forecast future maintenance issues using historical data analysis</p>
+                </div>
+                <a href="/AIAnalysis" class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Back to AI Dashboard
+                </a>
+            </div>
+        </div>
+
+        <!-- Success/Error Messages -->
+        @if (TempData["Success"] != null)
+        {
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+                <i class="fas fa-check-circle mr-2"></i>@TempData["Success"]
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+                <i class="fas fa-exclamation-triangle mr-2"></i>@TempData["Error"]
+            </div>
+        }
+
+        <!-- Form -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4">
+                <h3 class="text-lg font-semibold text-white">
+                    <i class="fas fa-brain mr-2"></i>
+                    AI-Powered Maintenance Prediction
+                </h3>
+            </div>
+
+            <form asp-action="GenerateMaintenancePrediction" method="post" class="p-6" id="maintenanceForm">
+                <div class="space-y-6">
+                    <!-- Analysis Scope -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-sliders-h mr-2"></i>
+                            Analysis Scope
+                        </label>
+                        <select name="projectId" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option value="">All Projects (Portfolio-wide Analysis)</option>
+                            @if (ViewBag.Projects != null)
+                            {
+                                @foreach (var project in ViewBag.Projects)
+                                {
+                                    var maintenanceCount = project.MaintenanceRequests?.Count ?? 0;
+                                    <option value="@project.Id">
+                                        @project.Name - @project.Location (@maintenanceCount maintenance records)
+                                    </option>
+                                }
+                            }
+                        </select>
+                        <p class="text-xs text-gray-500 mt-1">
+                            Select a specific project or analyze all projects together for broader insights
+                        </p>
+                    </div>
+
+                    <!-- Historical Data Preview -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <h4 class="text-sm font-semibold text-blue-900 mb-2">
+                            <i class="fas fa-database mr-2"></i>
+                            AI analyzes historical patterns from:
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-blue-800">
+                            <div><i class="fas fa-history text-blue-600 mr-2"></i>Past maintenance requests</div>
+                            <div><i class="fas fa-clock text-blue-600 mr-2"></i>Resolution timeframes</div>
+                            <div><i class="fas fa-chart-line text-blue-600 mr-2"></i>Frequency patterns</div>
+                            <div><i class="fas fa-tag text-blue-600 mr-2"></i>Common issue types</div>
+                            <div><i class="fas fa-exclamation-circle text-blue-600 mr-2"></i>Priority distributions</div>
+                            <div><i class="fas fa-calendar-alt text-blue-600 mr-2"></i>Seasonal variations</div>
+                        </div>
+                    </div>
+
+                    <!-- Prediction Timeline -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">
+                            <i class="fas fa-calendar-check mr-2"></i>
+                            Prediction Timeframe
+                        </label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg border-2 border-gray-200">
+                                <input type="checkbox" checked disabled class="mr-3 h-4 w-4 text-green-600">
+                                <div>
+                                    <div class="font-medium text-gray-900">Short-term</div>
+                                    <div class="text-xs text-gray-600">Next 3 months</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg border-2 border-gray-200">
+                                <input type="checkbox" checked disabled class="mr-3 h-4 w-4 text-green-600">
+                                <div>
+                                    <div class="font-medium text-gray-900">Medium-term</div>
+                                    <div class="text-xs text-gray-600">Next 6 months</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg border-2 border-gray-200">
+                                <input type="checkbox" checked disabled class="mr-3 h-4 w-4 text-green-600">
+                                <div>
+                                    <div class="font-medium text-gray-900">Long-term</div>
+                                    <div class="text-xs text-gray-600">Next 12 months</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            AI will provide predictions for all three timeframes automatically
+                        </p>
+                    </div>
+
+                    <!-- What You'll Get -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <h4 class="text-sm font-semibold text-green-900 mb-2">
+                            <i class="fas fa-clipboard-list mr-2"></i>
+                            Comprehensive Prediction Report includes:
+                        </h4>
+                        <ul class="text-sm text-green-800 space-y-1">
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>Top predicted issues for 3, 6, and 12 month periods</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>Risk probability ratings (High/Medium/Low)</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>Estimated costs for each predicted issue</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>Preventive maintenance recommendations</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>Cost comparison: Preventive vs. Reactive</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>Recommended maintenance schedule</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>Priority ranking of actions</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>South African climate considerations</li>
+                        </ul>
+                    </div>
+
+                    <!-- Benefits Callout -->
+                    <div class="bg-purple-50 border-l-4 border-purple-400 p-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-lightbulb text-purple-400 text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-semibold text-purple-900 mb-1">Why Predictive Maintenance?</h4>
+                                <p class="text-sm text-purple-700">
+                                    Studies show that predictive maintenance can reduce costs by 25-30% compared to reactive approaches,
+                                    and decrease unplanned downtime by up to 50%. Our AI helps you stay ahead of problems.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="flex justify-end space-x-4">
+                        <a href="/AIAnalysis" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                            Cancel
+                        </a>
+                        <button type="submit" id="predictBtn"
+                                class="px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-md hover:shadow-lg">
+                            <i class="fas fa-brain mr-2"></i>
+                            <span id="btnText">Generate Predictions</span>
+                            <i class="fas fa-spinner fa-spin ml-2 hidden" id="loadingIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- How Prediction Works -->
+        <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                <i class="fas fa-magic text-green-600 mr-2"></i>
+                How AI Predictive Maintenance Works
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-search text-green-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-900 mb-2">1. Pattern Detection</h4>
+                    <p class="text-sm text-gray-600">AI analyzes historical maintenance patterns and frequencies</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-brain text-purple-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-900 mb-2">2. Trend Analysis</h4>
+                    <p class="text-sm text-gray-600">Identifies trends and correlations in maintenance data</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-900 mb-2">3. Forecasting</h4>
+                    <p class="text-sm text-gray-600">Predicts future issues with probability scores</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-clipboard-check text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-medium text-gray-900 mb-2">4. Action Plan</h4>
+                    <p class="text-sm text-gray-600">Generates preventive maintenance schedule</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common Issues Preview -->
+        <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                <i class="fas fa-wrench text-green-600 mr-2"></i>
+                Common Maintenance Issues AI Can Predict
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-tint text-blue-500 mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-900">Plumbing Issues</h4>
+                        <p class="text-xs text-gray-600">Leaks, blockages, water pressure</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-bolt text-yellow-500 mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-900">Electrical Problems</h4>
+                        <p class="text-xs text-gray-600">Wiring, circuit breakers, lighting</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-wind text-cyan-500 mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-900">HVAC Systems</h4>
+                        <p class="text-xs text-gray-600">AC, heating, ventilation</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-home text-orange-500 mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-900">Structural Issues</h4>
+                        <p class="text-xs text-gray-600">Cracks, settling, foundation</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-paint-roller text-purple-500 mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-900">Exterior Maintenance</h4>
+                        <p class="text-xs text-gray-600">Paint, roofing, weatherproofing</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-shield-alt text-red-500 mt-1 mr-3"></i>
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-900">Safety Systems</h4>
+                        <p class="text-xs text-gray-600">Fire alarms, security, emergency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('maintenanceForm').addEventListener('submit', function(e) {
+        const btn = document.getElementById('predictBtn');
+        const btnText = document.getElementById('btnText');
+        const loadingIcon = document.getElementById('loadingIcon');
+
+        btn.disabled = true;
+        btnText.textContent = 'Predicting with AI...';
+        loadingIcon.classList.remove('hidden');
+    });
+</script>

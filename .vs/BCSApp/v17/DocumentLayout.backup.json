@@ -1,0 +1,667 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\aianalysis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\aianalysis\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\aianalysis\\aianalysis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\aianalysis\\aianalysis.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\aianalysis\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\aianalysis\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\models\\aianalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\models\\aianalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\aianalysis\\costestimation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\aianalysis\\costestimation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\controllers\\aianalysiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\controllers\\aianalysiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\services\\ideepseekservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\services\\ideepseekservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\services\\deepseekservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\services\\deepseekservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\message\\conversation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\message\\conversation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\message\\compose.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\message\\compose.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\message\\sent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\message\\sent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\message\\inbox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\message\\inbox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\message\\conversations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\message\\conversations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\aianalysis\\predictivemaintenance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\aianalysis\\predictivemaintenance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\bcsapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\bcsapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\message\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\message\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\models\\conversationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\models\\conversationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\models\\messageattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\models\\messageattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\controllers\\maintenancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\controllers\\maintenancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\maintenance\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\maintenance\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\maintenance\\allrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\maintenance\\allrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\maintenance\\clientrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\maintenance\\clientrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|d:\\downloads\\brown-s-construction-services-main\\brown-s-construction-services-main\\bcsapp\\models\\maintenancerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E3EFD1-CD18-42E8-994F-3D6668D24FB3}|BCSApp\\BCSApp.csproj|solutionrelative:bcsapp\\models\\maintenancerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AIAnalysis.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\AIAnalysis.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\AIAnalysis\\AIAnalysis.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\AIAnalysis.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\AIAnalysis\\AIAnalysis.cshtml",
+              "ViewState": "AgIAAOIAAAAAAAAAAAD4v+gAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T05:38:54.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Details.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Message\\Details.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Details.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Message\\Details.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAswJoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T22:41:39.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AIAnalysis.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\AIAnalysis.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Models\\AIAnalysis.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\AIAnalysis.cs",
+              "RelativeToolTip": "BCSApp\\Models\\AIAnalysis.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T21:13:31.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Compose.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Compose.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Message\\Compose.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Compose.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Message\\Compose.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAADQAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T22:41:15.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\Index.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\AIAnalysis\\Index.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\Index.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\AIAnalysis\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAD4vxYAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-30T05:18:43.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CostEstimation.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\CostEstimation.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\AIAnalysis\\CostEstimation.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\CostEstimation.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\AIAnalysis\\CostEstimation.cshtml",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAgwLIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-30T05:20:59.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DeepSeekService.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Services\\DeepSeekService.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Services\\DeepSeekService.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Services\\DeepSeekService.cs",
+              "RelativeToolTip": "BCSApp\\Services\\DeepSeekService.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAAAUwO4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T05:25:48.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IDeepSeekService.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Services\\IDeepSeekService.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Services\\IDeepSeekService.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Services\\IDeepSeekService.cs",
+              "RelativeToolTip": "BCSApp\\Services\\IDeepSeekService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T05:23:18.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AIAnalysisController.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\AIAnalysisController.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Controllers\\AIAnalysisController.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\AIAnalysisController.cs",
+              "RelativeToolTip": "BCSApp\\Controllers\\AIAnalysisController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAvwFEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T05:12:35.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\appsettings.json",
+              "RelativeDocumentMoniker": "BCSApp\\appsettings.json",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\appsettings.json",
+              "RelativeToolTip": "BCSApp\\appsettings.json",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAB0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-21T21:38:47.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Program.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Program.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Program.cs",
+              "RelativeToolTip": "BCSApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T22:21:04.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\Details.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\AIAnalysis\\Details.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\Details.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\AIAnalysis\\Details.cshtml",
+              "ViewState": "AgIAACoBAAAAAAAAAAAEwCsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T05:40:12.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Project.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\Project.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Models\\Project.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\Project.cs",
+              "RelativeToolTip": "BCSApp\\Models\\Project.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T02:19:42.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Conversation.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Conversation.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Message\\Conversation.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Conversation.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Message\\Conversation.cshtml",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAswKcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T22:43:05.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Conversations.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Conversations.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Message\\Conversations.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Conversations.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Message\\Conversations.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAIoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T22:42:00.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "BCSApp\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAAALkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T14:03:36.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Inbox.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Inbox.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Message\\Inbox.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Inbox.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Message\\Inbox.cshtml",
+              "ViewState": "AgIAAGICAAAAAAAAAAAwwHcCAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T22:56:31.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAswDoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-09T14:12:29.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Sent.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Sent.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Message\\Sent.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Message\\Sent.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Message\\Sent.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T22:43:30.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PredictiveMaintenance.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\PredictiveMaintenance.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\AIAnalysis\\PredictiveMaintenance.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\AIAnalysis\\PredictiveMaintenance.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\AIAnalysis\\PredictiveMaintenance.cshtml",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAowBQBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T05:41:13.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BCSApp.csproj",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\BCSApp.csproj",
+              "RelativeDocumentMoniker": "BCSApp\\BCSApp.csproj",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\BCSApp.csproj",
+              "RelativeToolTip": "BCSApp\\BCSApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-23T21:43:46.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Message.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Models\\Message.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\Message.cs",
+              "RelativeToolTip": "BCSApp\\Models\\Message.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T22:49:09.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MessageAttachment.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\MessageAttachment.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Models\\MessageAttachment.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\MessageAttachment.cs",
+              "RelativeToolTip": "BCSApp\\Models\\MessageAttachment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T22:49:17.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ConversationViewModel.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\ConversationViewModel.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Models\\ConversationViewModel.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\ConversationViewModel.cs",
+              "RelativeToolTip": "BCSApp\\Models\\ConversationViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T22:51:25.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T23:33:55.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MessageController.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\MessageController.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Controllers\\MessageController.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\MessageController.cs",
+              "RelativeToolTip": "BCSApp\\Controllers\\MessageController.cs",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAUwGMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T22:40:21.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Data\\SeedData.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Data\\SeedData.cs",
+              "RelativeToolTip": "BCSApp\\Data\\SeedData.cs",
+              "ViewState": "AgIAANkAAAAAAAAAAAAwwPUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T22:04:53.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-09T14:13:55.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T21:57:04.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ClientRequests.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Maintenance\\ClientRequests.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Maintenance\\ClientRequests.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Maintenance\\ClientRequests.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Maintenance\\ClientRequests.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-09T14:14:58.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-09T14:13:29.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Maintenance\\Create.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Maintenance\\Create.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Maintenance\\Create.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Maintenance\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-09T14:16:28.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "BCSApp\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T22:00:29.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ProjectController.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\ProjectController.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Controllers\\ProjectController.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\ProjectController.cs",
+              "RelativeToolTip": "BCSApp\\Controllers\\ProjectController.cs",
+              "ViewState": "AgIAACEBAAAAAAAAAAAqwD4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T20:40:54.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "MaintenanceController.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\MaintenanceController.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Controllers\\MaintenanceController.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\MaintenanceController.cs",
+              "RelativeToolTip": "BCSApp\\Controllers\\MaintenanceController.cs",
+              "ViewState": "AgIAAFoBAAAAAAAAAAAAAHcBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T14:10:47.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\User.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Models\\User.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\User.cs",
+              "RelativeToolTip": "BCSApp\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T13:59:48.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Controllers\\TaskController.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "BCSApp\\Controllers\\TaskController.cs",
+              "ViewState": "AgIAANkAAAAAAAAAAAAAAPYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T20:41:07.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "BCSApp\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAANIAAAAAAAAAAAAqwOIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T14:07:17.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "AllRequests.cshtml",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Maintenance\\AllRequests.cshtml",
+              "RelativeDocumentMoniker": "BCSApp\\Views\\Maintenance\\AllRequests.cshtml",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Views\\Maintenance\\AllRequests.cshtml",
+              "RelativeToolTip": "BCSApp\\Views\\Maintenance\\AllRequests.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-09T14:15:46.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "MaintenanceRequest.cs",
+              "DocumentMoniker": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\MaintenanceRequest.cs",
+              "RelativeDocumentMoniker": "BCSApp\\Models\\MaintenanceRequest.cs",
+              "ToolTip": "D:\\downloads\\Brown-s-Construction-Services-main\\Brown-s-Construction-Services-main\\BCSApp\\Models\\MaintenanceRequest.cs",
+              "RelativeToolTip": "BCSApp\\Models\\MaintenanceRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T14:00:21.038Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
